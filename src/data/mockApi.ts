@@ -725,6 +725,43 @@ export const apiCategories: ApiCategory[] = [
     ],
   },
   {
+    name: 'Stalker',
+    endpoints: [
+      {
+        id: 'stalker-instagram',
+        method: 'GET',
+        path: '/api/insta-stalk',
+        alias: 'Stalker Instagram',
+        category: 'Stalker',
+        parameters: [
+          {
+            name: 'username',
+            type: 'text',
+            required: true,
+            description: 'Nome de usuário do Instagram',
+            placeholder: 'neet.tk',
+          },
+        ],
+      },
+      {
+        id: 'stalker-youtube',
+        method: 'GET',
+        path: '/stalk/youtube',
+        alias: 'Stalker YouTube',
+        category: 'Stalker',
+        parameters: [
+          {
+            name: 'channel',
+            type: 'text',
+            required: true,
+            description: 'Nome do canal do YouTube',
+            placeholder: 'neetk1',
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: 'Hentai',
     endpoints: [
       {
