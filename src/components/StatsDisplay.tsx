@@ -16,7 +16,7 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
             <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.endpoints</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold font-mono gradient-primary bg-clip-text text-transparent">
+            <span className="text-5xl font-bold font-mono bg-gradient-to-r from-purple-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
               {totalEndpoints}
             </span>
             <span className="text-sm font-mono text-muted-foreground/60">rotas</span>
@@ -35,7 +35,7 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
             <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.categorias</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold font-mono gradient-secondary bg-clip-text text-transparent">
+            <span className="text-5xl font-bold font-mono bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
               {totalCategories}
             </span>
             <span className="text-sm font-mono text-muted-foreground/60">grupos</span>
