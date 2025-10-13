@@ -999,18 +999,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-glitchtext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/glitchtext',
         alias: 'Glitch Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'glitchtext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1022,18 +1014,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-writetext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/writetext',
         alias: 'Write Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'writetext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1045,18 +1029,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-advancedglow',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/advancedglow',
         alias: 'Advanced Glow',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'advancedglow',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1068,18 +1044,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-typographytext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/typographytext',
         alias: 'Typography Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'typographytext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1091,18 +1059,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-pixelglitch',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/pixelglitch',
         alias: 'Pixel Glitch',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'pixelglitch',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1114,18 +1074,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-neonglitch',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/neonglitch',
         alias: 'Neon Glitch',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'neonglitch',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1137,18 +1089,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-flagtext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/flagtext',
         alias: 'Flag Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'flagtext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1160,18 +1104,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-flag3dtext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/flag3dtext',
         alias: 'Flag 3D Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'flag3dtext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1183,18 +1119,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-deletingtext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/deletingtext',
         alias: 'Deleting Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'deletingtext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1206,18 +1134,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-blackpinkstyle',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/blackpinkstyle',
         alias: 'BlackPink Style',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'blackpinkstyle',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1229,18 +1149,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-glowingtext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/glowingtext',
         alias: 'Glowing Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'glowingtext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1252,18 +1164,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-underwatertext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/underwatertext',
         alias: 'Underwater Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'underwatertext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1275,18 +1179,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-logomaker',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/logomaker',
         alias: 'Logo Maker',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'logomaker',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1298,18 +1194,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-cartoonstyle',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/cartoonstyle',
         alias: 'Cartoon Style',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'cartoonstyle',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1321,18 +1209,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-papercutstyle',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/papercutstyle',
         alias: 'Papercut Style',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'papercutstyle',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1344,18 +1224,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-watercolortext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/watercolortext',
         alias: 'Watercolor Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'watercolortext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1367,18 +1239,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-effectclouds',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/effectclouds',
         alias: 'Effect Clouds',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'effectclouds',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1390,18 +1254,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-blackpinklogo',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/blackpinklogo',
         alias: 'BlackPink Logo',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'blackpinklogo',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1413,18 +1269,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-gradienttext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/gradienttext',
         alias: 'Gradient Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'gradienttext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1436,18 +1284,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-summerbeach',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/summerbeach',
         alias: 'Summer Beach',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'summerbeach',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1459,18 +1299,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-luxurygold',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/luxurygold',
         alias: 'Luxury Gold',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'luxurygold',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1482,18 +1314,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-sandsummer',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/sandsummer',
         alias: 'Sand Summer',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'sandsummer',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1505,18 +1329,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-galaxywallpaper',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/galaxywallpaper',
         alias: 'Galaxy Wallpaper',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'galaxywallpaper',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1528,18 +1344,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-1917style',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/1917style',
         alias: '1917 Style',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: '1917style',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1551,18 +1359,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-makingneon',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/makingneon',
         alias: 'Making Neon',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'makingneon',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1574,18 +1374,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-royaltext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/royaltext',
         alias: 'Royal Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'royaltext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1597,18 +1389,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-freecreate',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/freecreate',
         alias: 'Free Create',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'freecreate',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1620,18 +1404,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-galaxystyle',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/galaxystyle',
         alias: 'Galaxy Style',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'galaxystyle',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1643,18 +1419,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-amongustext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/amongustext',
         alias: 'Among Us Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'amongustext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
@@ -1666,18 +1434,10 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'ephoto-rainytext',
         method: 'GET',
-        path: '/ephoto/image',
+        path: '/ephoto/rainytext',
         alias: 'Rainy Text',
         category: 'ephoto360',
-        parameters: [
-          {
-            name: 'effect',
-            type: 'text',
-            required: true,
-            description: 'Tipo de efeito',
-            placeholder: 'rainytext',
-          },
-          {
+        parameters: [ {
             name: 'text1',
             type: 'text',
             required: true,
