@@ -1,0 +1,91 @@
+Esqueça todos os endpoints e categorias existentes. Apague tudo.
+
+Agora, crie as novas categorias e endpoints conforme listado abaixo. Organize os endpoints corretamente e permita execução (`execute`) de cada um, quando aplicável.
+
+--- DOWNLOAD ---
+- Xvideos Download:
+  GET www.api.neext.online/download/xvideos?url=URL_DO_VIDEO
+- SnackVídeo Download:
+  GET https://www.api.neext.online/search/snack/download?url=URL_DO_VIDEO
+- Spotify Download:
+  GET https://www.api.neext.online/download/spotify?url=URL_DO_SPOTIFY
+- Threads Download:
+  GET https://www.api.neext.online/download/threads?url=URL_DO_THREAD
+- TikTok Download 1:
+  GET https://www.api.neext.online/download/tiktok?url=URL_DO_VIDEO
+- TikTok Download 2:
+  GET https://www.api.neext.online/download/tiktok2?url=URL_DO_VIDEO
+- YouTube MP3:
+  GET https://api.neext.online/download/youtube/ytmp3?url=URL_DO_VIDEO&format=128
+- YouTube Play (Pesquisa):
+  GET https://api.neext.online/download/youtube/search?q=TEXT
+- YouTube MP4:
+  GET https://api.neext.online/download/youtube/ytmp4?url=URL_DO_VIDEO&format=720
+- YouTube Download V2:
+  GET https://api.neext.online/download/youtube/ytdlv2?url=URL_DO_VIDEO&format=128
+- StickerLy Download:
+  GET https://api.neext.online/stickerly/detail?url=URL_DO_STICKERLY
+- Xnxx Download:
+  GET https://api.neext.online/download/xnxx?url=URL_DO_VIDEO
+
+--- PESQUISA ---
+- Xvideos Search:
+  GET www.neext.online/search/xvideos?q=TEXT
+- SnackVídeo Search:
+  GET https://www.api.neext.online/search/snack/search?q=TEXT
+- Freepik Search:
+  CURL https://www.api.neext.online/freepik/search?q=TEXT
+- Pinterest Search:
+  GET https://www.api.neext.online/search/pinterest?q=TEXT
+- StickerLy Search:
+  GET https://api.neext.online/stickerly/search?q=TEXT
+- Xnxx Search:
+  GET https://www.api.neext.online/search/xnxx?q=TERMO&page=1
+
+--- FRASES ---
+- Anime:
+  GET https://www.api.neext.online/frases/frasesanime
+
+--- WALLPAPER ---
+- Minecraft:
+  GET https://www.api.neext.online/wallpaper/wallpaperminecraft
+- 18+:
+  GET https://www.api.neext.online/18/photoporno
+
+--- FIGURINHAS ---
+- Brat:
+  GET https://www.api.neext.online/sticker/brat?text=SEU_TEXTO_AQUI
+- Anime:
+  GET https://www.api.neext.online/sticker/figurinhas/anime
+- Meme:
+  GET https://www.api.neext.online/sticker/figurinhas/meme
+- Emoji:
+  GET https://www.api.neext.online/sticker/figurinhas/emoji
+
+--- JORNAL ---
+- Notícias:
+  GET https://www.api.neext.online/jornal/noticias
+
+--- RANDOM ---
+- Hentai:
+  GET https://www.api.neext.online/random/hentai
+- Shuushuu:
+  GET https://www.api.neext.online/random/e-shuushuu
+- Loli:
+  GET https://www.api.neext.online/random/loli
+- Yandere:
+  GET https://www.api.neext.online/random/yandere
+- Safebooru:
+  GET https://www.api.neext.online/random/safebooru
+- Konachan:
+  GET https://www.api.neext.online/konachan/random
+- Memes:
+  GET https://www.api.neext.online/random/memes
+
+---
+
+Instruções adicionais:
+1. Todos os endpoints devem aceitar parâmetros dinâmicos, como `url`, `q`, `text` ou `page`.
+2. Execute cada endpoint quando solicitado pelo usuário.
+3. Organize as categorias exatamente como listado acima.
+4. Nenhum endpoint antigo deve permanecer.
