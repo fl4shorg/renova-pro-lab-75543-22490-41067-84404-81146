@@ -1505,6 +1505,59 @@ export const apiCategories: ApiCategory[] = [
     ],
   },
   {
+    name: 'metadinha',
+    endpoints: [
+      {
+        id: 'metadinha-dexter',
+        method: 'GET',
+        path: '/stickerwiki/dexter',
+        alias: 'Dexter',
+        category: 'metadinha',
+        parameters: [],
+      },
+      {
+        id: 'metadinha-homemaranha',
+        method: 'GET',
+        path: '/stickerwiki/homemaranha',
+        alias: 'Homem-Aranha',
+        category: 'metadinha',
+        parameters: [],
+      },
+      {
+        id: 'metadinha-diariodeumvampiro',
+        method: 'GET',
+        path: '/stickerwiki/diariodeumvampiro',
+        alias: 'Diário de um Vampiro',
+        category: 'metadinha',
+        parameters: [],
+      },
+      {
+        id: 'metadinha-lacasadepapel',
+        method: 'GET',
+        path: '/stickerwiki/lacasadepapel',
+        alias: 'La Casa de Papel',
+        category: 'metadinha',
+        parameters: [],
+      },
+      {
+        id: 'metadinha-you',
+        method: 'GET',
+        path: '/stickerwiki/you',
+        alias: 'You',
+        category: 'metadinha',
+        parameters: [],
+      },
+      {
+        id: 'metadinha-shrek',
+        method: 'GET',
+        path: '/stickerwiki/shrek',
+        alias: 'Shrek',
+        category: 'metadinha',
+        parameters: [],
+      },
+    ],
+  },
+  {
     name: 'Hentai',
     endpoints: [
       {
