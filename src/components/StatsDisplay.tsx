@@ -63,7 +63,7 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
               <span className="text-lg font-bold font-mono bg-gradient-to-r from-green-400 via-emerald-500 to-green-400 bg-clip-text text-transparent">
                 BOT GODDARD
               </span>
-              <span className="text-sm font-mono text-green-500/80">ATIVO</span>
+              <span className="text-sm font-mono text-green-500/80">ATIVO EM DESENVOLVIMENTO</span>
             </div>
             <div className="mt-3 h-1 w-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full opacity-50"></div>
           </div>
