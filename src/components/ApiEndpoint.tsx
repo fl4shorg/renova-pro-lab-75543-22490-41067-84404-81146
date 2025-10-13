@@ -3,7 +3,6 @@ import { ChevronDown, Play, Code } from 'lucide-react';
 import { ApiEndpoint as ApiEndpointType } from '@/types/api';
 import { EndpointForm } from './EndpointForm';
 import { ResponseViewer } from './ResponseViewer';
-import { supabase } from '@/integrations/supabase/client';
 import { useApiHealth } from '@/hooks/useApiHealth';
 
 interface ApiEndpointProps {
@@ -25,42 +24,29 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
     setRequestInfo(null);
     setResponseKey(prev => prev + 1);
     try {
-      // Use Cloud proxies to avoid CORS for specific endpoints
+      // Use local proxy to avoid CORS for specific endpoints
+      let url: string;
       if (endpoint.id === 'noticias') {
-        const { data, error } = await supabase.functions.invoke('proxy-noticias', {
-          body: { params: formData },
-        });
-        if (error) throw error;
-        setResponse(JSON.stringify(data, null, 2));
-        setRequestInfo({
-          method: endpoint.method,
-          url: `${serverUrl}${endpoint.path}`,
-          status: 200
-        });
-        return;
+        const params = new URLSearchParams(formData);
+        url = `/api/proxy-noticias?${params.toString()}`;
+      } else if (endpoint.id === 'hentai') {
+        const params = new URLSearchParams(formData);
+        url = `/api/proxy-hentai?${params.toString()}`;
+      } else {
+        // Default: direct request
+        const params = new URLSearchParams(formData);
+        url = `${serverUrl}${endpoint.path}?${params.toString()}`;
       }
-      if (endpoint.id === 'hentai') {
-        const { data, error } = await supabase.functions.invoke('proxy-hentai', {
-          body: { params: formData },
-        });
-        if (error) throw error;
-        setResponse(JSON.stringify(data, null, 2));
-        setRequestInfo({
-          method: endpoint.method,
-          url: `${serverUrl}${endpoint.path}`,
-          status: 200
-        });
-        return;
-      }
-
-      // Default: direct request
-      const params = new URLSearchParams(formData);
-      const url = `${serverUrl}${endpoint.path}?${params.toString()}`;
+      
       const res = await fetch(url);
       
       const contentType = res.headers.get('content-type') || '';
       
       // Handle different content types
+      const displayUrl = endpoint.id === 'noticias' || endpoint.id === 'hentai' 
+        ? `${serverUrl}${endpoint.path}` 
+        : url;
+      
       if (contentType.includes('video/')) {
         // Direct video stream - create blob URL for player
         const blob = await res.blob();
@@ -68,7 +54,7 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
         setResponse(blobUrl);
         setRequestInfo({
           method: endpoint.method,
-          url: url,
+          url: displayUrl,
           status: res.status,
           contentType: 'video'
         });
@@ -79,7 +65,7 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
         setResponse(blobUrl);
         setRequestInfo({
           method: endpoint.method,
-          url: url,
+          url: displayUrl,
           status: res.status,
           contentType: 'image'
         });
@@ -90,7 +76,7 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
           setResponse(JSON.stringify(data, null, 2));
           setRequestInfo({
             method: endpoint.method,
-            url: url,
+            url: displayUrl,
             status: res.status,
             contentType: 'json'
           });
@@ -100,7 +86,7 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
           setResponse(text);
           setRequestInfo({
             method: endpoint.method,
-            url: url,
+            url: displayUrl,
             status: res.status,
             contentType: 'text'
           });
