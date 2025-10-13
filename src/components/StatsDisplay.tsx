@@ -1,3 +1,5 @@
+import { Bot } from 'lucide-react';
+
 interface StatsDisplayProps {
   totalEndpoints: number;
   totalCategories: number;
@@ -54,7 +56,7 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
           <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative p-6">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-green-500 shadow-glow animate-pulse"></div>
+              <Bot className="w-4 h-4 text-green-500 animate-pulse" />
               <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.bots</span>
             </div>
             <div className="flex flex-col gap-1">
@@ -73,7 +75,7 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
           <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative p-6">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-red-500 shadow-glow"></div>
+              <Bot className="w-4 h-4 text-red-500" />
               <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.bots</span>
             </div>
             <div className="flex flex-col gap-1">

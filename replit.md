@@ -34,7 +34,7 @@ This is a React-based API documentation platform built with Vite, TypeScript, an
 - **UI Components**: shadcn-ui (Radix UI primitives)
 - **Styling**: Tailwind CSS with custom animations
 - **State Management**: React Query (@tanstack/react-query)
-- **Routing**: React Router DOM with HashRouter
+- **Routing**: React Router DOM with HashRouter (supports subfolders and renaming)
 - **Form Handling**: react-hook-form with Zod validation
 
 ### Project Structure
