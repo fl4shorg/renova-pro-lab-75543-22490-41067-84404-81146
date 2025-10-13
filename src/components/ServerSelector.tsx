@@ -12,7 +12,7 @@ export const ServerSelector = ({ servers, selectedServer, onServerChange }: Serv
     <div className="mb-8">
       <div className="flex items-center justify-between mb-3">
         <label className="block text-xs font-bold text-muted-foreground font-sans uppercase tracking-wider">
-          Protocolos
+          Selecionar Servidor
         </label>
         <ThemeToggle />
       </div>

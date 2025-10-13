@@ -3,11 +3,11 @@ import { ApiCategory, Server } from '@/types/api';
 export const servers: Server[] = [
   {
     url: 'https://www.api.neext.online',
-    name: 'Production Server',
+    name: 'https://www.api.neext.online - Production Server',
   },
   {
-    url: 'https://localhost:300',
-    name: 'Local Server',
+    url: 'http://localhost:3000',
+    name: 'http://localhost:3000 - Localhost',
   },
 ];
 
