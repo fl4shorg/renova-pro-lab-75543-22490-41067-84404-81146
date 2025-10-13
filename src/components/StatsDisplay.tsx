@@ -12,13 +12,13 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
         <div className="relative p-6">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">system.endpoints</span>
+            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.endpoints</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-5xl font-bold font-mono bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               {totalEndpoints}
             </span>
-            <span className="text-sm font-mono text-muted-foreground/60">routes</span>
+            <span className="text-sm font-mono text-muted-foreground/60">rotas</span>
           </div>
           <div className="mt-3 h-1 w-full bg-gradient-to-r from-primary/20 via-primary/40 to-transparent rounded-full"></div>
         </div>
@@ -30,13 +30,13 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
         <div className="relative p-6">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">system.categories</span>
+            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.categorias</span>
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-5xl font-bold font-mono bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               {totalCategories}
             </span>
-            <span className="text-sm font-mono text-muted-foreground/60">groups</span>
+            <span className="text-sm font-mono text-muted-foreground/60">grupos</span>
           </div>
           <div className="mt-3 h-1 w-full bg-gradient-to-r from-primary/20 via-primary/40 to-transparent rounded-full"></div>
         </div>
