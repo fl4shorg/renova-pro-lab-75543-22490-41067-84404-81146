@@ -505,6 +505,54 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'tiktok-search',
+        method: 'GET',
+        path: '/api/tiktok',
+        alias: 'TikTok Search',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Termo de pesquisa',
+            placeholder: 'the flash',
+          },
+        ],
+      },
+      {
+        id: 'mediafire-search',
+        method: 'GET',
+        path: '/mediafire',
+        alias: 'Mediafire Search',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Termo de pesquisa',
+            placeholder: 'naruto',
+          },
+        ],
+      },
+      {
+        id: 'playstore-search',
+        method: 'GET',
+        path: '/playstore',
+        alias: 'Playstore',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Nome do aplicativo',
+            placeholder: 'WhatsApp',
+          },
+        ],
+      },
     ],
   },
   {
