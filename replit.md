@@ -6,6 +6,13 @@ This is a React-based API documentation platform built with Vite, TypeScript, an
 **Current State**: Production-ready. The application is fully functional and running on Replit.
 
 ## Recent Changes
+- **2025-10-13**: Completed migration from Supabase to production-ready Replit environment
+  - Migrated Supabase Edge Functions to Express proxy server
+  - Created production-ready server.js with API proxy routes
+  - Updated Vite proxy configuration for development mode
+  - Removed all Supabase dependencies (@supabase/supabase-js)
+  - Updated build and deployment scripts for production
+  - Verified both development and production workflows
 - **2025-10-04**: Major API expansion and Replit setup completed
   - Installed npm dependencies
   - Verified Vite configuration for Replit environment (port 5000, host 0.0.0.0, allowedHosts enabled)
@@ -45,7 +52,6 @@ src/
 │   └── StatsDisplay.tsx
 ├── data/             # Mock API data and configurations
 ├── hooks/            # Custom React hooks
-├── integrations/     # External service integrations (Supabase)
 ├── lib/              # Utility functions
 ├── pages/            # Page components
 ├── types/            # TypeScript type definitions
@@ -61,19 +67,29 @@ src/
 - **Responsive Design**: Mobile-friendly interface
 
 ### Development Configuration
-- **Dev Server**: Runs on `0.0.0.0:5000`
+- **Dev Server**: Vite runs on `0.0.0.0:5000`
+- **Proxy Routes**: Vite proxy configured for `/api/proxy-noticias` and `/api/proxy-hentai`
 - **Hot Module Replacement**: Configured for Replit proxy environment
-- **Workflow**: Single "Start application" workflow running `npm run dev`
+- **Workflow**: Single "Server" workflow running `npm run dev`
+
+### Production Configuration
+- **Production Server**: Express.js server (server.js)
+- **API Proxy Routes**: `/api/proxy-noticias` and `/api/proxy-hentai` handled by Express
+- **Static Files**: Served from `dist/` directory
+- **Build Command**: `npm run build`
+- **Start Command**: `node server.js`
 
 ### Deployment Configuration
-- **Deployment Target**: Autoscale (stateless frontend)
+- **Deployment Target**: VM (requires running Express server)
 - **Build Command**: `npm run build`
-- **Start Command**: `npm run preview`
+- **Start Command**: `node server.js`
+- **Port**: 5000 (both dev and production)
 
 ### Dependencies Notes
-- Uses Supabase for backend integration
+- Uses Express.js for production proxy server
 - Includes comprehensive Radix UI component library
 - Lovable tagger for component tracking in development mode
+- No external backend dependencies (fully self-contained)
 
 ## User Preferences
 None specified yet.
