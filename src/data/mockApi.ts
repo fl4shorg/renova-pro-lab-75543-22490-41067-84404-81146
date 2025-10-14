@@ -1694,7 +1694,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-dexter',
         method: 'GET',
-        path: '/stickerwiki/dexter',
+        path: '/metadinha/dexter',
         alias: 'Dexter',
         category: 'metadinha',
         parameters: [],
@@ -1702,7 +1702,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-homemaranha',
         method: 'GET',
-        path: '/stickerwiki/homemaranha',
+        path: '/metadinha/homemaranha',
         alias: 'Homem-Aranha',
         category: 'metadinha',
         parameters: [],
@@ -1710,7 +1710,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-diariodeumvampiro',
         method: 'GET',
-        path: '/stickerwiki/diariodeumvampiro',
+        path: '/metadinha/diariodeumvampiro',
         alias: 'Diário de um Vampiro',
         category: 'metadinha',
         parameters: [],
@@ -1718,7 +1718,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-lacasadepapel',
         method: 'GET',
-        path: '/stickerwiki/lacasadepapel',
+        path: '/metadinha/lacasadepapel',
         alias: 'La Casa de Papel',
         category: 'metadinha',
         parameters: [],
@@ -1726,7 +1726,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-you',
         method: 'GET',
-        path: '/stickerwiki/you',
+        path: '/metadinha/you',
         alias: 'You',
         category: 'metadinha',
         parameters: [],
@@ -1734,7 +1734,7 @@ export const apiCategories: ApiCategory[] = [
       {
         id: 'metadinha-shrek',
         method: 'GET',
-        path: '/stickerwiki/shrek',
+        path: '/metadinha/shrek',
         alias: 'Shrek',
         category: 'metadinha',
         parameters: [],
