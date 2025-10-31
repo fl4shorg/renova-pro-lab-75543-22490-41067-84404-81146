@@ -33,8 +33,13 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed top-4 left-4 z-[100] p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
-          style={{ position: 'fixed' }}
+          className="p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
+          style={{ 
+            position: 'fixed',
+            top: '1rem',
+            left: '1rem',
+            zIndex: 9999
+          }}
           aria-label="Toggle menu"
         >
           <div className="relative">
