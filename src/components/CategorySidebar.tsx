@@ -56,8 +56,15 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
         <div className="relative h-full flex flex-col pb-6 px-4 sm:px-6">
           <div className="pt-6 pb-4 mb-4 border-b border-border/50">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl gradient-primary shadow-elegant flex items-center justify-center flex-shrink-0">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-foreground/90 rounded-xl"></div>
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
+                <div className="absolute inset-0 gradient-primary rounded-2xl blur-lg opacity-60"></div>
+                <div className="relative w-full h-full gradient-primary rounded-2xl p-2.5 sm:p-3 shadow-elegant">
+                  <img 
+                    src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
+                    alt="Neext Logo"
+                    className="w-full h-full object-contain brightness-0 invert"
+                  />
+                </div>
               </div>
               <div>
                 <h1 className="text-xl sm:text-2xl font-black tracking-tight gradient-text">Neext APIs</h1>
