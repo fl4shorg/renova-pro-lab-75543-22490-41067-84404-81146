@@ -30,18 +30,20 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-6 left-6 z-50 p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
-        aria-label="Toggle menu"
-      >
-        <div className="relative">
-          <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed top-6 left-6 z-50 p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
+          aria-label="Toggle menu"
+        >
           <div className="relative">
-            <Menu className="w-6 h-6 text-primary" />
+            <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
+            <div className="relative">
+              <Menu className="w-6 h-6 text-primary" />
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      )}
 
       <div
         className={cn(
