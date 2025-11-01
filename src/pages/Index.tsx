@@ -169,35 +169,35 @@ const Index = () => {
 
         {/* License & Usage Section */}
         <div className="mt-12 mb-12 animate-fade-in">
-          <div className="relative rounded-2xl bg-white border border-gray-200 p-8 max-w-2xl mx-auto shadow-sm">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>
+          <div className="relative rounded-xl bg-slate-900/50 border border-slate-700 p-6 max-w-xl mx-auto">
+            <h2 className="text-xl font-bold mb-3 text-gray-100">
               License & Usage
             </h2>
             
-            <p className="text-gray-600 text-base leading-relaxed mb-6" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>
+            <p className="text-gray-300 text-sm leading-relaxed mb-5">
               This API is free to use for personal and commercial projects. We only ask that you use it responsibly and don't abuse the service.
             </p>
             
-            <div className="flex flex-col gap-3 mb-8">
-              <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-300">
-                <svg className="w-5 h-5 text-gray-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex flex-col gap-2 mb-0">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700 text-base" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>No Authentication Required</span>
+                <span className="text-gray-300 text-sm">No Authentication Required</span>
               </div>
               
-              <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-300">
-                <svg className="w-5 h-5 text-gray-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700 text-base" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>No Rate Limits</span>
+                <span className="text-gray-300 text-sm">No Rate Limits</span>
               </div>
               
-              <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-300">
-                <svg className="w-5 h-5 text-gray-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
+                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-700 text-base" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>Free Forever</span>
+                <span className="text-gray-300 text-sm">Free Forever</span>
               </div>
             </div>
           </div>
@@ -205,10 +205,10 @@ const Index = () => {
         
         {/* Footer Section */}
         <div className="mt-8 mb-12 text-center animate-fade-in">
-          <p className="text-gray-600 text-base mb-1" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>
+          <p className="text-gray-400 text-sm mb-1">
             Thx To All Users And Contributors.
           </p>
-          <p className="text-gray-500 text-sm" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>
+          <p className="text-gray-500 text-xs">
             © NekoLabs APIs. | All Rights Reserved.
           </p>
         </div>
