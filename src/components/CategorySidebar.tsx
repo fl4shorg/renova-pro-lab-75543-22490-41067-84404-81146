@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard, Calendar } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
 
@@ -34,6 +34,35 @@ interface CategorySidebarProps {
 
 export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, onClose }: CategorySidebarProps) => {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const getBrasiliaTime = () => {
+    const brasiliaOffset = -3;
+    const utc = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);
+    const brasiliaTime = new Date(utc + (3600000 * brasiliaOffset));
+    
+    const day = brasiliaTime.getDate().toString().padStart(2, '0');
+    const month = (brasiliaTime.getMonth() + 1).toString().padStart(2, '0');
+    const year = brasiliaTime.getFullYear();
+    const hours = brasiliaTime.getHours().toString().padStart(2, '0');
+    const minutes = brasiliaTime.getMinutes().toString().padStart(2, '0');
+    const seconds = brasiliaTime.getSeconds().toString().padStart(2, '0');
+    
+    return {
+      date: `${day}/${month}/${year}`,
+      time: `${hours}:${minutes}:${seconds}`
+    };
+  };
+
+  const { date, time } = getBrasiliaTime();
 
   const toggleCategory = (categoryName: string) => {
     const newExpanded = new Set(expandedCategories);
@@ -76,6 +105,12 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
               <div>
                 <h1 className="text-xl sm:text-2xl font-black tracking-tight gradient-text">Shinobu API</h1>
                 <p className="text-xs text-muted-foreground mt-0.5">Documentação v4.0</p>
+                <div className="flex items-center gap-1.5 mt-1.5">
+                  <Calendar className="w-3 h-3 text-primary/70" />
+                  <span className="text-[10px] text-muted-foreground font-mono">
+                    {date} • {time}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
