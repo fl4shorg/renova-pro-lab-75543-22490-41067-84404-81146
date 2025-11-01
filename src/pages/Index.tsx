@@ -79,19 +79,29 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div className="group relative overflow-hidden rounded-3xl border border-primary/20 glass-effect transition-all duration-300 hover:border-primary/40 hover:shadow-elegant px-8 py-6 max-w-md w-full">
-            <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-            <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="group relative overflow-hidden rounded-2xl border-[3px] border-white bg-black px-5 py-4 w-auto inline-flex">
             <div className="relative">
-              <h3 className="text-lg font-bold font-sans text-[#00ff88] mb-3 text-center tracking-wide">
-                VISITANTES DIÁRIOS: ↴
-              </h3>
-              <div className="flex justify-center items-center mb-3">
-                <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1">
+                  <h3 className="text-sm font-bold font-sans text-[#00ff88] mb-2 tracking-wide">
+                    VISITANTES DIÁRIOS: ↴
+                  </h3>
+                  <div className="flex justify-start items-center mb-2">
+                    <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+                  </div>
+                  <p className="text-left text-slate-400/80 font-serif text-xs">
+                    Seja bem-vindo, aproveite!
+                  </p>
+                </div>
+                <div className="flex-shrink-0 ml-3">
+                  <div className="w-12 h-12 rounded-lg bg-green-900/40 border-2 border-green-700/50 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <p className="text-center text-slate-400/80 font-serif text-sm">
-                Seja bem-vindo, aproveite!
-              </p>
             </div>
           </div>
           <noscript>
