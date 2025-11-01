@@ -29,7 +29,7 @@ export const WelcomeModal = () => {
 
   return (
     <>
-      <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" />
+      <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" loop />
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
         <div className="absolute inset-0 gradient-primary opacity-5 pointer-events-none"></div>
