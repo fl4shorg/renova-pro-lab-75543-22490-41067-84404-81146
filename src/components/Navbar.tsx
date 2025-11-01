@@ -87,7 +87,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
           <div className="fixed top-20 right-4 sm:right-6 z-50 w-64 bg-background/95 backdrop-blur-lg border border-border rounded-xl shadow-2xl animate-fade-in">
             <div className="p-4">
               <h3 className="text-foreground text-sm font-bold mb-3">Info</h3>
-              <div className="flex items-center gap-2 p-3 bg-accent/50 rounded-lg border border-border">
+              <div className="flex items-center gap-2 p-3 rounded-lg border border-border">
                 <FontAwesomeIcon 
                   icon={faWrench} 
                   className="w-4 h-4 text-red-500 flex-shrink-0"
