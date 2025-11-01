@@ -11,7 +11,10 @@ export const ServerSelector = ({ servers, selectedServer, onServerChange }: Serv
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-3">
-        <label className="block text-xs font-bold text-muted-foreground font-sans uppercase tracking-wider">
+        <label className="flex items-center gap-2 text-xs font-bold text-muted-foreground font-sans uppercase tracking-wider">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M2 13a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+          </svg>
           Selecionar Servidor
         </label>
         <ThemeToggle />
