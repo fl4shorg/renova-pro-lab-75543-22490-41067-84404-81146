@@ -33,7 +33,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
     <>
       <div
         className={cn(
-          "fixed top-0 left-0 h-full w-80 sm:w-96 glass-effect-strong shadow-2xl z-[60] transition-transform duration-300 ease-in-out overflow-hidden",
+          "fixed top-0 left-0 h-full w-64 glass-effect-strong shadow-2xl z-[60] transition-transform duration-300 ease-in-out overflow-hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
