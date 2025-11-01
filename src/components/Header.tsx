@@ -14,9 +14,7 @@ export const Header = () => {
     <header className="mb-16 animate-fade-in">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
         <div className="relative w-16 h-16 flex items-center justify-center flex-shrink-0">
-          <div className="absolute inset-0 gradient-primary rounded-2xl blur-xl opacity-60 animate-shimmer group-hover:opacity-80 transition-smooth" 
-               style={{ backgroundSize: '200% 100%' }}></div>
-          <div className="relative w-16 h-16 gradient-primary rounded-2xl p-3 shadow-glow hover:scale-110 transition-bounce">
+          <div className="relative w-16 h-16 gradient-primary rounded-2xl p-3 shadow-elegant hover:scale-110 transition-bounce">
             <img 
               src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
               alt="Neext Logo"
