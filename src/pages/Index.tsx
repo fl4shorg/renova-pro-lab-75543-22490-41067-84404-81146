@@ -79,8 +79,17 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
-          <a href="https://www.webcontadores.com" className="text-xs text-muted-foreground hover:text-primary transition-colors">contador de visitas html</a>
+          <div className="glass-effect rounded-2xl border border-green-500/30 p-6 max-w-lg w-full">
+            <h3 className="text-xl font-bold font-mono text-green-500 mb-4 text-center">
+              VISITANTES DIÁRIOS: ↴
+            </h3>
+            <div className="flex justify-center mb-3">
+              <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+            </div>
+            <p className="text-center text-muted-foreground/70 font-mono text-sm">
+              Seja bem-vindo, aproveite!
+            </p>
+          </div>
           <noscript>
             <a href="https://www.webcontadores.com" title="contador de visitas html">
               <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=ekxwgseaee5p6xxgjukejkbdy47xdxzt" className="border-0" title="contador de visitas html" alt="contador de visitas html" />
