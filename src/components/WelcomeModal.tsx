@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 export const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleEnter = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.log('Autoplay prevented:', error);
+      });
+    }
     setIsOpen(false);
   };
 
@@ -22,8 +28,10 @@ export const WelcomeModal = () => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
+    <>
+      <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" />
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
         <div className="absolute inset-0 gradient-primary opacity-5 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
@@ -76,5 +84,6 @@ export const WelcomeModal = () => {
         </div>
       </DialogContent>
     </Dialog>
+    </>
   );
 };
