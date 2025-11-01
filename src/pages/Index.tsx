@@ -86,7 +86,12 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in gap-4">
-          <div className="group relative overflow-hidden rounded-2xl border-[3px] border-white bg-black px-5 py-4 w-auto inline-flex">
+          <div className="group relative overflow-hidden rounded-2xl bg-black px-5 py-4 w-auto inline-flex" style={{ 
+            border: '3px solid transparent',
+            backgroundImage: 'linear-gradient(black, black), linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(190 95% 55%) 100%)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box'
+          }}>
             <div className="relative">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex-1">
@@ -112,7 +117,12 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="group relative overflow-hidden rounded-2xl border-[3px] border-white bg-black px-5 py-4 w-auto inline-flex">
+          <div className="group relative overflow-hidden rounded-2xl bg-black px-5 py-4 w-auto inline-flex" style={{ 
+            border: '3px solid transparent',
+            backgroundImage: 'linear-gradient(black, black), linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(190 95% 55%) 100%)',
+            backgroundOrigin: 'border-box',
+            backgroundClip: 'padding-box, border-box'
+          }}>
             <div className="relative">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
