@@ -1,18 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 export const WelcomeModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const hasVisited = localStorage.getItem('hasVisitedShinobuAPI');
-    if (!hasVisited) {
-      setIsOpen(true);
-    }
-  }, []);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleEnter = () => {
-    localStorage.setItem('hasVisitedShinobuAPI', 'true');
     setIsOpen(false);
   };
 
@@ -31,12 +23,12 @@ export const WelcomeModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md bg-background border-2 border-primary/20 p-0 overflow-hidden">
-        <div className="flex flex-col items-center text-center p-8">
-          <div className="relative w-48 h-48 mb-6 flex items-center justify-center">
+      <DialogContent className="sm:max-w-sm bg-background border-2 border-primary/20 p-0 overflow-hidden">
+        <div className="flex flex-col items-center text-center p-6">
+          <div className="relative w-32 h-32 mb-4 flex items-center justify-center">
             <div className="absolute inset-0 gradient-primary rounded-3xl blur-2xl opacity-60 animate-shimmer" 
                  style={{ backgroundSize: '200% 100%' }}></div>
-            <div className="relative w-48 h-48 gradient-primary rounded-3xl p-6 shadow-glow">
+            <div className="relative w-32 h-32 gradient-primary rounded-3xl p-4 shadow-glow">
               <img 
                 src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
                 alt="Shinobu API Logo"
@@ -45,12 +37,12 @@ export const WelcomeModal = () => {
             </div>
           </div>
 
-          <h2 className="text-4xl font-black mb-4 text-foreground">
-            Olha quem apareceu 😎
+          <h2 className="text-3xl font-black mb-3 text-foreground">
+            Documentação Pronta! 🚀
           </h2>
 
-          <p className="text-base text-muted-foreground mb-8 max-w-sm leading-relaxed">
-            Bem vindo(a) ao painel de REST API da Shinobu API...
+          <p className="text-sm text-muted-foreground mb-6 max-w-xs leading-relaxed">
+            Explore 359 endpoints organizados em 14 categorias. Teste, documente e integre!
           </p>
 
           <button
@@ -60,11 +52,8 @@ export const WelcomeModal = () => {
             Entrar
           </button>
 
-          <div className="mt-8 pt-6 border-t border-border/50 w-full">
-            <p className="text-sm text-muted-foreground font-medium">
-              By Victor & Matheus ©
-            </p>
-            <p className="text-xs text-muted-foreground/70 mt-2">
+          <div className="mt-4 w-full">
+            <p className="text-xs text-muted-foreground/70">
               {getCurrentDate()}
             </p>
           </div>
