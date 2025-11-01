@@ -53,7 +53,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
                 </div>
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-black tracking-tight gradient-text">Neext APIs</h1>
+                <h1 className="text-xl sm:text-2xl font-black tracking-tight gradient-text">Shinobu API</h1>
                 <p className="text-xs text-muted-foreground mt-0.5">Documentação v3.0</p>
               </div>
             </div>

@@ -32,7 +32,7 @@ export const Header = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl font-black mb-3 font-sans tracking-tight">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Neext APIs</span>
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Shinobu API</span>
           </h1>
           
           <div className="h-1.5 w-32 gradient-primary rounded-full mb-6 shadow-glow mx-auto sm:mx-0 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
