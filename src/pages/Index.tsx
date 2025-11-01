@@ -25,12 +25,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-sans relative overflow-hidden">
-      <CategorySidebar 
-        categories={apiCategories} 
-        onRouteClick={handleRouteClick}
-        serverUrl={selectedServer}
-      />
-
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 gradient-primary opacity-10 blur-3xl rounded-full"></div>
@@ -38,6 +32,11 @@ const Index = () => {
       </div>
 
       <main className="relative max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-24">
+        <CategorySidebar 
+          categories={apiCategories} 
+          onRouteClick={handleRouteClick}
+          serverUrl={selectedServer}
+        />
         <div ref={headerRef} className="scroll-reveal">
           <Header />
         </div>

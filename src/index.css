@@ -324,12 +324,4 @@ html {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
-  /* Fixed Menu Button */
-  .menu-button-fixed {
-    position: fixed !important;
-    top: 1rem !important;
-    left: 1rem !important;
-    z-index: 9999 !important;
-  }
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import { Menu, ChevronRight, ChevronDown } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
@@ -31,20 +30,21 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
 
   return (
     <>
-      {!isOpen && createPortal(
-        <button
-          onClick={() => setIsOpen(true)}
-          className="menu-button-fixed p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
-          aria-label="Toggle menu"
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
+      {!isOpen && (
+        <div className="mb-4">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
+            aria-label="Toggle menu"
+          >
             <div className="relative">
-              <Menu className="w-6 h-6 text-primary" />
+              <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
+              <div className="relative">
+                <Menu className="w-6 h-6 text-primary" />
+              </div>
             </div>
-          </div>
-        </button>,
-        document.body
+          </button>
+        </div>
       )}
 
       <div
