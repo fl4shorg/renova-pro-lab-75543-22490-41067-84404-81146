@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBiohazard } from '@fortawesome/free-solid-svg-icons';
+import { faSyringe } from '@fortawesome/free-solid-svg-icons';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
 
@@ -42,7 +42,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
               <div className="relative">
-                <FontAwesomeIcon icon={faBiohazard} className="w-6 h-6 text-primary" />
+                <FontAwesomeIcon icon={faSyringe} className="w-6 h-6 text-primary" />
               </div>
             </div>
           </button>
