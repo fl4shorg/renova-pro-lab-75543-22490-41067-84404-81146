@@ -45,6 +45,8 @@ export const Header = () => {
                 </svg>
                 <span className="relative text-primary-foreground z-10">WhatsApp Channel</span>
               </a>
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center sm:justify-start sm:ml-8">
               <a
                 href="https://instagram.com/neet.tk"
                 target="_blank"
@@ -57,19 +59,19 @@ export const Header = () => {
                 </svg>
                 <span className="relative text-white z-10">Instagram</span>
               </a>
+              <a
+                href="https://www.neext.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl overflow-hidden font-bold shadow-elegant hover:shadow-glow transition-smooth hover:scale-105"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"></div>
+                <svg className="relative w-4 h-4 text-white z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+                <span className="relative text-white z-10">Site Oficial</span>
+              </a>
             </div>
-            <a
-              href="https://www.neext.online"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl overflow-hidden font-bold shadow-elegant hover:shadow-glow transition-smooth hover:scale-105"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600"></div>
-              <svg className="relative w-4 h-4 text-white z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-              <span className="relative text-white z-10">Site Oficial</span>
-            </a>
           </div>
         </div>
       </div>
