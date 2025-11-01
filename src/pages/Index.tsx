@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Header } from '@/components/Header';
 import { ServerSelector } from '@/components/ServerSelector';
@@ -17,6 +17,18 @@ const Index = () => {
   const serverRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const endpointRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://counter1.optistats.ovh/private/counter.js?c=ekxwgseaee5p6xxgjukejkbdy47xdxzt&down=async';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleRouteClick = (endpoint: ApiEndpoint) => {
     setSelectedEndpoint(endpoint);
@@ -66,10 +78,14 @@ const Index = () => {
           />
         </div>
 
-        <div className="flex justify-center mb-8 animate-fade-in">
-          <a href="https://www.webcontadores.com" title="contador de pessoas online para blog">
-            <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=s4rksszhp29gydq7rgud3zybw8k1r91c" className="border-0" title="contador de pessoas online para blog" alt="contador de pessoas online para blog" />
-          </a>
+        <div className="flex flex-col items-center mb-8 animate-fade-in">
+          <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+          <a href="https://www.webcontadores.com" className="text-xs text-muted-foreground hover:text-primary transition-colors">contador de visitas html</a>
+          <noscript>
+            <a href="https://www.webcontadores.com" title="contador de visitas html">
+              <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=ekxwgseaee5p6xxgjukejkbdy47xdxzt" className="border-0" title="contador de visitas html" alt="contador de visitas html" />
+            </a>
+          </noscript>
         </div>
 
         {selectedEndpoint && (
