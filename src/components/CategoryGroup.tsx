@@ -35,7 +35,7 @@ const CategoryGroupComponent = ({ category, serverUrl }: CategoryGroupProps) => 
             </div>
           </div>
           <span className="text-base group-hover/btn:text-primary transition-smooth tracking-tight font-extrabold">{category.name}</span>
-          <span className="text-[10px] px-3 py-1.5 rounded-full gradient-accent text-foreground font-bold font-mono uppercase tracking-wider flex-shrink-0 shadow-sm">
+          <span className="text-[10px] px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 text-cyan-300 font-bold font-mono uppercase tracking-wider flex-shrink-0 shadow-elegant border border-cyan-500/30">
             {category.endpoints.length} {category.endpoints.length === 1 ? 'endpoint' : 'endpoints'}
           </span>
         </h2>

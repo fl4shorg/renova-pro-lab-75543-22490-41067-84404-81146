@@ -136,7 +136,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
                         {category.name}
                       </p>
                     </div>
-                    <span className="text-[10px] px-2 py-1 rounded-full bg-accent/50 text-muted-foreground font-mono">
+                    <span className="text-[10px] px-2.5 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 font-mono font-bold border border-cyan-500/30 shadow-sm">
                       {category.endpoints.length}
                     </span>
                   </div>
