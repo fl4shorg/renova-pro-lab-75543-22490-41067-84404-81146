@@ -79,7 +79,7 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div className="rounded-3xl border-2 border-white/80 px-8 py-6 max-w-md bg-black/50 backdrop-blur-sm">
+          <div className="rounded-3xl border-2 border-primary/20 px-8 py-6 max-w-md bg-black/50 backdrop-blur-sm glass-effect">
             <h3 className="text-lg font-bold font-sans text-[#00ff88] mb-3 text-center tracking-wide">
               VISITANTES DIÁRIOS: ↴
             </h3>
