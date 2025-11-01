@@ -79,14 +79,14 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div className="glass-effect rounded-2xl border border-green-500/30 p-6 max-w-lg w-full">
-            <h3 className="text-xl font-bold font-mono text-green-500 mb-4 text-center">
+          <div className="rounded-3xl border-2 border-white/80 p-8 max-w-xl w-full bg-black/40 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold font-mono text-green-500 mb-6 text-center tracking-wide">
               VISITANTES DIÁRIOS: ↴
             </h3>
-            <div className="flex justify-center mb-3">
+            <div className="flex justify-center mb-6">
               <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
             </div>
-            <p className="text-center text-muted-foreground/70 font-mono text-sm">
+            <p className="text-center text-slate-400 font-serif text-lg">
               Seja bem-vindo, aproveite!
             </p>
           </div>
