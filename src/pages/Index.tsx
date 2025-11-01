@@ -66,6 +66,12 @@ const Index = () => {
           />
         </div>
 
+        <div className="flex justify-center mb-8 animate-fade-in">
+          <a href="https://www.webcontadores.com" title="contador de pessoas online para blog">
+            <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=s4rksszhp29gydq7rgud3zybw8k1r91c" className="border-0" title="contador de pessoas online para blog" alt="contador de pessoas online para blog" />
+          </a>
+        </div>
+
         {selectedEndpoint && (
           <div ref={endpointRef} className="mt-8 animate-fade-in">
             <div className="glass-effect-strong rounded-2xl p-6 shadow-card">
