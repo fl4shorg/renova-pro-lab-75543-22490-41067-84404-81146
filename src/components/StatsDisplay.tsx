@@ -13,9 +13,9 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
           <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-primary shadow-glow animate-pulse"></div>
-              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.endpoints</span>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-2 h-2 rounded-full bg-primary shadow-glow animate-pulse flex-shrink-0"></div>
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-wide">sistema.endpoints</span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className="text-5xl font-bold font-mono bg-gradient-to-r from-purple-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -31,9 +31,9 @@ export const StatsDisplay = ({ totalEndpoints, totalCategories }: StatsDisplayPr
           <div className="absolute inset-0 gradient-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           <div className="relative p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-2 h-2 rounded-full bg-primary shadow-glow animate-pulse"></div>
-              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">sistema.categorias</span>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-2 h-2 rounded-full bg-primary shadow-glow animate-pulse flex-shrink-0"></div>
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-wide">sistema.categorias</span>
             </div>
             <div className="flex items-baseline gap-2">
               <span className="text-5xl font-bold font-mono bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
