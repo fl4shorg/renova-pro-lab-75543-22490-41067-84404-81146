@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronDown } from 'lucide-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSyringe } from '@fortawesome/free-solid-svg-icons';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
 
@@ -9,10 +7,11 @@ interface CategorySidebarProps {
   categories: ApiCategory[];
   onRouteClick: (endpoint: ApiEndpoint) => void;
   serverUrl: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: CategorySidebarProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, onClose }: CategorySidebarProps) => {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   const toggleCategory = (categoryName: string) => {
@@ -27,28 +26,11 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
 
   const handleRouteClick = (endpoint: ApiEndpoint) => {
     onRouteClick(endpoint);
-    setIsOpen(false);
+    onClose();
   };
 
   return (
     <>
-      {!isOpen && (
-        <div className="mb-4">
-          <button
-            onClick={() => setIsOpen(true)}
-            className="p-3 rounded-xl glass-effect-strong hover-lift transition-smooth group"
-            aria-label="Toggle menu"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
-              <div className="relative">
-                <FontAwesomeIcon icon={faSyringe} className="w-6 h-6 text-primary" />
-              </div>
-            </div>
-          </button>
-        </div>
-      )}
-
       <div
         className={cn(
           "fixed top-0 left-0 h-full w-80 sm:w-96 glass-effect-strong shadow-2xl z-40 transition-transform duration-300 ease-in-out overflow-hidden",
@@ -146,7 +128,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl }: Categor
       {isOpen && (
         <div
           className="fixed inset-0 bg-background/80 backdrop-blur-sm z-30 transition-opacity duration-300"
-          onClick={() => setIsOpen(false)}
+          onClick={onClose}
         />
       )}
     </>
