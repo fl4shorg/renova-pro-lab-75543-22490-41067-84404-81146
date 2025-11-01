@@ -171,11 +171,11 @@ const Index = () => {
         <div className="mt-12 mb-12 animate-fade-in">
           <div className="relative rounded-xl bg-slate-900/50 border border-slate-700 p-6 max-w-xl mx-auto">
             <h2 className="text-xl font-bold mb-3 text-gray-100">
-              License & Usage
+              Licença & Uso
             </h2>
             
             <p className="text-gray-300 text-sm leading-relaxed mb-5">
-              This API is free to use for personal and commercial projects. We only ask that you use it responsibly and don't abuse the service.
+              Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
             </p>
             
             <div className="flex flex-col gap-2 mb-0">
@@ -183,21 +183,21 @@ const Index = () => {
                 <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">No Authentication Required</span>
+                <span className="text-gray-300 text-sm">Sem Autenticação Necessária</span>
               </div>
               
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
                 <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">No Rate Limits</span>
+                <span className="text-gray-300 text-sm">Sem Limite de Requisições</span>
               </div>
               
               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
                 <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">Free Forever</span>
+                <span className="text-gray-300 text-sm">Grátis Para Sempre</span>
               </div>
             </div>
           </div>
@@ -206,10 +206,10 @@ const Index = () => {
         {/* Footer Section */}
         <div className="mt-8 mb-12 text-center animate-fade-in">
           <p className="text-gray-400 text-sm mb-1">
-            Thx To All Users And Contributors.
+            Obrigado a todos os usuários e contribuidores.
           </p>
           <p className="text-gray-500 text-xs">
-            © NekoLabs APIs. | All Rights Reserved.
+            © NekoLabs APIs. | Todos os direitos reservados.
           </p>
         </div>
       </main>
