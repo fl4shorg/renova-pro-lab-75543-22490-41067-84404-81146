@@ -209,7 +209,7 @@ const Index = () => {
             Obrigado a todos os usuários e contribuidores.
           </p>
           <p className="text-gray-500 text-xs">
-            © NekoLabs APIs. | Todos os direitos reservados.
+            © Neext Ltda. | Todos os direitos reservados.
           </p>
         </div>
       </main>
