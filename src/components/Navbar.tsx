@@ -100,7 +100,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
                       animation: 'shimmer 3s linear infinite'
                     }}
                   >
-                    neext mods domina
+                    Neext é o melhor!
                   </span>
                 </div>
               </div>
