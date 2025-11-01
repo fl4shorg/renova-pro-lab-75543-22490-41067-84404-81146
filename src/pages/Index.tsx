@@ -5,6 +5,7 @@ import { ServerSelector } from '@/components/ServerSelector';
 import { StatsDisplay } from '@/components/StatsDisplay';
 import { CategorySidebar } from '@/components/CategorySidebar';
 import { ApiEndpoint as ApiEndpointComponent } from '@/components/ApiEndpoint';
+import { WelcomeModal } from '@/components/WelcomeModal';
 import { servers, apiCategories, getTotalEndpoints, getTotalCategories } from '@/data/mockApi';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ApiEndpoint } from '@/types/api';
@@ -50,6 +51,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-sans relative overflow-hidden">
+      <WelcomeModal />
       <Navbar onMenuClick={handleMenuClick} />
       
       {/* Background decorative elements */}
