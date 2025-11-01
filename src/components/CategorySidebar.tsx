@@ -1,7 +1,28 @@
 import { useState } from 'react';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
+
+const getCategoryIcon = (categoryName: string) => {
+  const iconMap: Record<string, any> = {
+    'Download': Download,
+    'Pesquisa': Search,
+    'Frases': MessageSquare,
+    'Wallpaper': Image,
+    'Figurinhas': Sticker,
+    'Jornal': Newspaper,
+    'Anime': Sparkles,
+    'Stalker': UserSearch,
+    'ephoto360': Wand2,
+    'metadinha': Heart,
+    'Hentai': Video,
+    'Random': Shuffle,
+    'nsfwhub': Video,
+    'sfmcompile': Clapperboard,
+  };
+  
+  return iconMap[categoryName] || Sparkles;
+};
 
 interface CategorySidebarProps {
   categories: ApiCategory[];
@@ -68,8 +89,12 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
+                      {(() => {
+                        const IconComponent = getCategoryIcon(category.name);
+                        return <IconComponent className="w-4 h-4 text-primary/70 group-hover/item:text-primary transition-colors" />;
+                      })()}
                       <ChevronDown className={cn(
-                        "w-4 h-4 transition-transform text-muted-foreground",
+                        "w-3.5 h-3.5 transition-transform text-muted-foreground",
                         expandedCategories.has(category.name) ? "rotate-0" : "-rotate-90"
                       )} />
                       <p className="font-bold text-sm text-foreground group-hover/item:text-primary transition-colors">
@@ -113,14 +138,6 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="mt-4 pt-4 border-t border-border/50">
-            <div className="glass-effect p-3 rounded-lg text-center">
-              <p className="text-xs text-muted-foreground">
-                Total: <span className="font-bold text-primary">{categories.length}</span> categorias
-              </p>
-            </div>
           </div>
         </div>
       </div>
