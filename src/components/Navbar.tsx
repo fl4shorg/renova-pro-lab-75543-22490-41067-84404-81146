@@ -18,7 +18,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border">
         <div className="max-w-full px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
                 </div>
               </div>
               
-              <div className="h-8 w-[1px] bg-white/20"></div>
+              <div className="h-8 w-[1px] bg-border"></div>
             </div>
 
             <div className="flex items-center gap-4 sm:gap-6">
@@ -40,12 +40,12 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
               
               <button 
                 onClick={handleNotificationClick}
-                className="relative p-2 hover:bg-white/5 rounded-lg transition-colors group"
+                className="relative p-2 hover:bg-accent rounded-lg transition-colors group"
                 aria-label="Notificações"
               >
                 <FontAwesomeIcon 
                   icon={faBell} 
-                  className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" 
+                  className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" 
                 />
                 {hasNotification && (
                   <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
@@ -65,12 +65,12 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
 
               <button 
                 onClick={onMenuClick}
-                className="p-2 hover:bg-white/5 rounded-lg transition-colors group"
+                className="p-2 hover:bg-accent rounded-lg transition-colors group"
                 aria-label="Menu"
               >
                 <FontAwesomeIcon 
                   icon={faBars} 
-                  className="w-5 h-5 text-white/80 group-hover:text-white transition-colors" 
+                  className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" 
                 />
               </button>
             </div>
@@ -84,10 +84,10 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
             className="fixed inset-0 z-40"
             onClick={() => setShowNotificationPanel(false)}
           />
-          <div className="fixed top-20 right-4 sm:right-6 z-50 w-64 bg-black/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl animate-fade-in">
+          <div className="fixed top-20 right-4 sm:right-6 z-50 w-64 bg-background/95 backdrop-blur-lg border border-border rounded-xl shadow-2xl animate-fade-in">
             <div className="p-4">
-              <h3 className="text-white text-sm font-bold mb-3">Info</h3>
-              <div className="flex items-center gap-2 p-3 bg-gradient-to-r from-gray-900 to-black rounded-lg border border-white/5">
+              <h3 className="text-foreground text-sm font-bold mb-3">Info</h3>
+              <div className="flex items-center gap-2 p-3 bg-accent/50 rounded-lg border border-border">
                 <FontAwesomeIcon 
                   icon={faWrench} 
                   className="w-4 h-4 text-red-500 flex-shrink-0"
