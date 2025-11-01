@@ -208,7 +208,7 @@ const Index = () => {
           <p className="text-gray-400 text-sm mb-1">
             Obrigado a todos os usuários e contribuidores.
           </p>
-          <p className="text-gray-500 text-xs">
+          <p className="text-sm font-bold animated-gradient-text">
             © Neext Ltda. | Todos os direitos reservados.
           </p>
         </div>

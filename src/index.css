@@ -324,4 +324,33 @@ html {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Animated Rainbow Gradient Text */
+  @keyframes rainbow-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animated-gradient-text {
+    background: linear-gradient(90deg, 
+      hsl(262 83% 58%), 
+      hsl(190 95% 55%), 
+      hsl(340 82% 52%), 
+      hsl(48 96% 53%), 
+      hsl(142 76% 36%), 
+      hsl(262 83% 58%)
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-gradient 5s ease-in-out infinite;
+  }
 }
