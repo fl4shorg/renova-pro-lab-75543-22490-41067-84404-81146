@@ -58,7 +58,7 @@ const Index = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 gradient-secondary opacity-10 blur-3xl rounded-full"></div>
       </div>
 
-      <main className="relative max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-24 mt-16">
+      <main className="relative max-w-6xl mx-auto px-4 sm:px-8 py-4 sm:py-8 mt-16">
         <CategorySidebar 
           categories={apiCategories} 
           onRouteClick={handleRouteClick}
@@ -168,8 +168,8 @@ const Index = () => {
         )}
 
         {/* License & Usage Section */}
-        <div className="mt-12 mb-12 animate-fade-in">
-          <div className="relative rounded-xl bg-slate-900/50 border border-slate-700 p-6 max-w-xl mx-auto">
+        <div className="mt-6 mb-2 animate-fade-in">
+          <div className="relative rounded-xl bg-slate-900/50 border border-slate-700 p-5 max-w-xl mx-auto">
             <h2 className="text-xl font-bold mb-3 text-gray-100">
               Licença & Uso
             </h2>
@@ -204,7 +204,7 @@ const Index = () => {
         </div>
         
         {/* Footer Section */}
-        <div className="mt-8 mb-12 text-center animate-fade-in">
+        <div className="mt-2 pb-2 text-center animate-fade-in">
           <p className="text-gray-400 text-sm mb-1">
             Obrigado a todos os usuários e contribuidores.
           </p>
