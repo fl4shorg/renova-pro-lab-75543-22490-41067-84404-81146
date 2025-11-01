@@ -13,6 +13,7 @@ const Index = () => {
   const [selectedServer, setSelectedServer] = useState(servers[0].url);
   const [selectedEndpoint, setSelectedEndpoint] = useState<ApiEndpoint | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [userIp, setUserIp] = useState<string>('Carregando...');
   const headerRef = useScrollReveal();
   const serverRef = useScrollReveal();
   const statsRef = useScrollReveal();
@@ -24,6 +25,12 @@ const Index = () => {
     script.src = 'https://counter1.optistats.ovh/private/counter.js?c=ekxwgseaee5p6xxgjukejkbdy47xdxzt&down=async';
     script.async = true;
     document.body.appendChild(script);
+
+    // Fetch user IP
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => setUserIp(data.ip))
+      .catch(() => setUserIp('Não disponível'));
 
     return () => {
       document.body.removeChild(script);
@@ -78,7 +85,7 @@ const Index = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center mb-8 animate-fade-in">
+        <div className="flex flex-col items-center mb-8 animate-fade-in gap-4">
           <div className="group relative overflow-hidden rounded-2xl border-[3px] border-white bg-black px-5 py-4 w-auto inline-flex">
             <div className="relative">
               <div className="flex items-center justify-between gap-4">
@@ -104,6 +111,34 @@ const Index = () => {
               </div>
             </div>
           </div>
+          
+          <div className="group relative overflow-hidden rounded-2xl border-[3px] border-white bg-black px-5 py-4 w-auto inline-flex">
+            <div className="relative">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-sm font-bold font-sans text-red-400 mb-2 tracking-wide">
+                    INFORMAÇÕES DE CONEXÃO
+                  </h3>
+                  <p className="text-left text-white font-mono text-base font-semibold">
+                    Seu IP:{userIp}
+                  </p>
+                </div>
+                <div className="flex-shrink-0 ml-3">
+                  <div className="w-12 h-12 rounded-lg bg-green-900/40 border-2 border-green-700/50 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <noscript>
             <a href="https://www.webcontadores.com" title="contador de visitas html">
               <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=ekxwgseaee5p6xxgjukejkbdy47xdxzt" className="border-0" title="contador de visitas html" alt="contador de visitas html" />
