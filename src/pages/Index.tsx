@@ -79,16 +79,20 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div className="rounded-3xl border-2 border-primary/20 px-8 py-6 max-w-md bg-black/50 backdrop-blur-sm glass-effect">
-            <h3 className="text-lg font-bold font-sans text-[#00ff88] mb-3 text-center tracking-wide">
-              VISITANTES DIÁRIOS: ↴
-            </h3>
-            <div className="flex justify-center items-center mb-3">
-              <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+          <div className="group relative overflow-hidden rounded-3xl border border-primary/20 glass-effect transition-all duration-300 hover:border-primary/40 hover:shadow-elegant px-8 py-6 max-w-md w-full">
+            <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="relative">
+              <h3 className="text-lg font-bold font-sans text-[#00ff88] mb-3 text-center tracking-wide">
+                VISITANTES DIÁRIOS: ↴
+              </h3>
+              <div className="flex justify-center items-center mb-3">
+                <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
+              </div>
+              <p className="text-center text-slate-400/80 font-serif text-sm">
+                Seja bem-vindo, aproveite!
+              </p>
             </div>
-            <p className="text-center text-slate-400/80 font-serif text-sm">
-              Seja bem-vindo, aproveite!
-            </p>
           </div>
           <noscript>
             <a href="https://www.webcontadores.com" title="contador de visitas html">
