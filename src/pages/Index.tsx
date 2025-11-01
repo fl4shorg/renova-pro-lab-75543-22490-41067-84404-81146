@@ -79,14 +79,14 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in">
-          <div className="rounded-3xl border-2 border-white/80 p-8 max-w-xl w-full bg-black/40 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold font-mono text-green-500 mb-6 text-center tracking-wide">
+          <div className="rounded-3xl border-2 border-white/90 px-12 py-8 max-w-2xl w-full bg-black/60 backdrop-blur-md shadow-2xl">
+            <h3 className="text-3xl font-extrabold font-sans text-[#00ff88] mb-6 text-center tracking-wider uppercase" style={{ textShadow: '0 0 20px rgba(0, 255, 136, 0.5)' }}>
               VISITANTES DIÁRIOS: ↴
             </h3>
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center items-center mb-6 min-h-[80px]">
               <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
             </div>
-            <p className="text-center text-slate-400 font-serif text-lg">
+            <p className="text-center text-slate-400/90 font-serif text-xl tracking-wide">
               Seja bem-vindo, aproveite!
             </p>
           </div>
