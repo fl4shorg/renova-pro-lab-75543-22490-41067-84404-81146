@@ -89,7 +89,7 @@ const Index = () => {
 
         <div className="flex flex-col items-center mb-8 animate-fade-in gap-4">
           {/* Visitantes Card */}
-          <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-gradient-to-br from-purple-900/20 via-slate-900/40 to-cyan-900/20 border-2 border-purple-500/30 hover:border-cyan-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-purple-500/20 w-full max-w-md">
+          <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl glass-effect-strong border-2 border-purple-500/30 hover:border-cyan-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-purple-500/20 w-full max-w-md">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
@@ -112,14 +112,14 @@ const Index = () => {
                 <div id="sfcekxwgseaee5p6xxgjukejkbdy47xdxzt"></div>
               </div>
               
-              <p className="text-center text-slate-300/70 text-sm">
+              <p className="text-center text-muted-foreground text-sm">
                 Seja bem-vindo, aproveite! ✨
               </p>
             </div>
           </div>
           
           {/* IP Info Card */}
-          <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-gradient-to-br from-cyan-900/20 via-slate-900/40 to-purple-900/20 border-2 border-cyan-500/30 hover:border-purple-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-cyan-500/20 w-full max-w-md">
+          <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl glass-effect-strong border-2 border-cyan-500/30 hover:border-purple-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-cyan-500/20 w-full max-w-md">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
@@ -138,8 +138,8 @@ const Index = () => {
               </div>
               
               <div className="flex items-center justify-center gap-2">
-                <p className="text-slate-300/70 text-sm">Seu IP:</p>
-                <p className="text-white font-mono text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                <p className="text-muted-foreground text-sm">Seu IP:</p>
+                <p className="text-foreground font-mono text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   {userIp}
                 </p>
                 <div className="ml-2">
@@ -171,35 +171,35 @@ const Index = () => {
 
         {/* License & Usage Section */}
         <div className="mt-6 mb-2 animate-fade-in">
-          <div className="relative rounded-xl bg-slate-900/50 border border-slate-700 p-5 max-w-xl mx-auto">
-            <h2 className="text-xl font-bold mb-3 text-gray-100">
+          <div className="relative rounded-xl bg-card/50 border border-border p-5 max-w-xl mx-auto">
+            <h2 className="text-xl font-bold mb-3 text-foreground">
               Licença & Uso
             </h2>
             
-            <p className="text-gray-300 text-sm leading-relaxed mb-5">
+            <p className="text-foreground/80 text-sm leading-relaxed mb-5">
               Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
             </p>
             
             <div className="flex flex-col gap-2 mb-0">
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
+                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">Sem Autenticação Necessária</span>
+                <span className="text-foreground/90 text-sm">Sem Autenticação Necessária</span>
               </div>
               
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
+                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">Sem Limite de Requisições</span>
+                <span className="text-foreground/90 text-sm">Sem Limite de Requisições</span>
               </div>
               
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700">
-                <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
+                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-gray-300 text-sm">Grátis Para Sempre</span>
+                <span className="text-foreground/90 text-sm">Grátis Para Sempre</span>
               </div>
             </div>
           </div>
