@@ -100,7 +100,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
                       animation: 'shimmer 3s linear infinite'
                     }}
                   >
-                    Neext é o melhor!
+                    Neext é a melhor!
                   </span>
                 </div>
               </div>
