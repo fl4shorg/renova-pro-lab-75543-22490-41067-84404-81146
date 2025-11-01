@@ -23,6 +23,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
               <div className="relative group">
+                <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:blur-lg transition-smooth"></div>
                 <div className="relative p-2">
                   <FontAwesomeIcon 
                     icon={faSyringe} 
@@ -52,6 +53,7 @@ export const Navbar = ({ onMenuClick }: NavbarProps) => {
               </button>
 
               <div className="relative w-10 h-10 flex-shrink-0">
+                <div className="absolute inset-0 gradient-primary rounded-full blur-md opacity-60"></div>
                 <div className="relative w-full h-full gradient-primary rounded-full p-2 shadow-elegant hover:scale-110 transition-smooth cursor-pointer">
                   <img 
                     src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
