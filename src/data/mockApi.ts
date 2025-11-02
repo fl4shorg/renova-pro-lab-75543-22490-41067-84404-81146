@@ -5703,6 +5703,22 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'tools-antiporno',
+        method: 'GET',
+        path: '/tools/antiporno',
+        alias: 'Antiporno',
+        category: 'Tools',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL da imagem',
+            placeholder: 'https://i.ibb.co/N2qWPxb7/88dfe41c43186feb6baaf7b8b47cea85.jpg',
+          },
+        ],
+      },
     ],
   },
   ];
