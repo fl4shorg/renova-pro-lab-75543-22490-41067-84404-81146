@@ -4165,6 +4165,283 @@ export const apiCategories: ApiCategory[] = [
       },
     ],
   },
+  {
+    name: 'FlamingText',
+    endpoints: [
+      {
+        id: 'flamingtext-fluffy',
+        method: 'GET',
+        path: '/flamingtext/fluffy-logo',
+        alias: 'Fluffy Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-lava',
+        method: 'GET',
+        path: '/flamingtext/lava-logo',
+        alias: 'Lava Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-cool',
+        method: 'GET',
+        path: '/flamingtext/cool-logo',
+        alias: 'Cool Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-comic',
+        method: 'GET',
+        path: '/flamingtext/comic-logo',
+        alias: 'Comic Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-fire',
+        method: 'GET',
+        path: '/flamingtext/fire-logo',
+        alias: 'Fire Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-water',
+        method: 'GET',
+        path: '/flamingtext/water-logo',
+        alias: 'Water Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-ice',
+        method: 'GET',
+        path: '/flamingtext/ice-logo',
+        alias: 'Ice Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-elegant',
+        method: 'GET',
+        path: '/flamingtext/elegant-logo',
+        alias: 'Elegant Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-gold',
+        method: 'GET',
+        path: '/flamingtext/gold-logo',
+        alias: 'Gold Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-fortune',
+        method: 'GET',
+        path: '/flamingtext/fortune-logo',
+        alias: 'Fortune Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-blue',
+        method: 'GET',
+        path: '/flamingtext/blue-logo',
+        alias: 'Blue Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-silver',
+        method: 'GET',
+        path: '/flamingtext/silver-logo',
+        alias: 'Silver Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-neon',
+        method: 'GET',
+        path: '/flamingtext/neon-logo',
+        alias: 'Neon Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-skate',
+        method: 'GET',
+        path: '/flamingtext/skate-logo',
+        alias: 'Skate Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-retro',
+        method: 'GET',
+        path: '/flamingtext/retro-logo',
+        alias: 'Retro Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-candy',
+        method: 'GET',
+        path: '/flamingtext/candy-logo',
+        alias: 'Candy Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+      {
+        id: 'flamingtext-glossy',
+        method: 'GET',
+        path: '/flamingtext/glossy-logo',
+        alias: 'Glossy Logo',
+        category: 'FlamingText',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Texto do logo',
+            placeholder: 'Flash',
+          },
+        ],
+      },
+    ],
+  },
   ];
 
 export const getTotalEndpoints = (): number => {
