@@ -1403,6 +1403,22 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'attp',
+        method: 'GET',
+        path: '/attp',
+        alias: 'ATTP',
+        category: 'Figurinhas',
+        parameters: [
+          {
+            name: 'text',
+            type: 'text',
+            required: true,
+            description: 'Texto para a figurinha',
+            placeholder: 'Flash',
+          },
+        ],
+      },
     ],
   },
   {
