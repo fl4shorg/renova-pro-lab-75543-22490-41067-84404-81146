@@ -68,6 +68,14 @@ app.get('/api/proxy-hentai', async (req, res) => {
   }
 });
 
+// Disable cache for static files
+app.use((req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  next();
+});
+
 // Serve static files from the dist directory in production
 app.use(express.static(join(__dirname, 'dist')));
 

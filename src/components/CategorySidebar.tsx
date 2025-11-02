@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
-import { ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard, Calendar } from 'lucide-react';
+import { 
+  ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, 
+  Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard, 
+  Calendar, Brain, Palette, FileQuestion, Flame, Film, Signature, Shield, 
+  Wrench, AppWindow, Play
+} from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
 
@@ -17,11 +22,19 @@ const getCategoryIcon = (categoryName: string) => {
     'metadinha': Heart,
     'Hentai': Video,
     'Random': Shuffle,
-    'nsfwhub': Video,
+    'nsfwhub': Play,
     'sfmcompile': Clapperboard,
+    'IA': Brain,
+    'Canvas': Palette,
+    'Consultas': FileQuestion,
+    'FlamingText': Flame,
+    'IMDB': Film,
+    'Plaquinha': Signature,
+    'Textpro': Shield,
+    'Tools': Wrench,
   };
   
-  return iconMap[categoryName] || Sparkles;
+  return iconMap[categoryName] || AppWindow;
 };
 
 interface CategorySidebarProps {
