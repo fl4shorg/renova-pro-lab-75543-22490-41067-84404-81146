@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 export const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -32,6 +32,8 @@ export const WelcomeModal = () => {
       <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" loop />
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
+        <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
+        <DialogDescription className="sr-only">Explore 359 endpoints organizados em 14 categorias. Teste, documente e integre!</DialogDescription>
         <div className="absolute inset-0 gradient-primary opacity-5 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
