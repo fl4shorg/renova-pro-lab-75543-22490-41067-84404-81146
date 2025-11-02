@@ -1358,6 +1358,105 @@ export const apiCategories: ApiCategory[] = [
     ],
   },
   {
+    name: 'Canvas',
+    endpoints: [
+      {
+        id: 'canvas-twitterbiden',
+        method: 'GET',
+        path: '/canvas/twitterbiden',
+        alias: 'Twitter Biden',
+        category: 'Canvas',
+        parameters: [
+          {
+            name: 'text',
+            type: 'text',
+            required: true,
+            description: 'Texto para o meme',
+            placeholder: 'neext',
+          },
+        ],
+      },
+      {
+        id: 'canvas-logosupreme',
+        method: 'GET',
+        path: '/canvas/logosupreme',
+        alias: 'Logo Supreme',
+        category: 'Canvas',
+        parameters: [
+          {
+            name: 'text',
+            type: 'text',
+            required: true,
+            description: 'Texto para o logo',
+            placeholder: 'SupremeCat',
+          },
+        ],
+      },
+      {
+        id: 'canvas-pikachumeme',
+        method: 'GET',
+        path: '/canvas/pikachumeme',
+        alias: 'Pikachu Meme',
+        category: 'Canvas',
+        parameters: [
+          {
+            name: 'text',
+            type: 'text',
+            required: true,
+            description: 'Texto para o meme',
+            placeholder: 'hellohejs',
+          },
+        ],
+      },
+      {
+        id: 'canvas-drakememe',
+        method: 'GET',
+        path: '/canvas/drakememe',
+        alias: 'Drake Meme',
+        category: 'Canvas',
+        parameters: [
+          {
+            name: 'text1',
+            type: 'text',
+            required: true,
+            description: 'Primeiro texto',
+            placeholder: 'amongus',
+          },
+          {
+            name: 'text2',
+            type: 'text',
+            required: true,
+            description: 'Segundo texto',
+            placeholder: 'amogus',
+          },
+        ],
+      },
+      {
+        id: 'canvas-poohmeme',
+        method: 'GET',
+        path: '/canvas/poohmeme',
+        alias: 'Pooh Meme',
+        category: 'Canvas',
+        parameters: [
+          {
+            name: 'text1',
+            type: 'text',
+            required: true,
+            description: 'Primeiro texto',
+            placeholder: 'Teste',
+          },
+          {
+            name: 'text2',
+            type: 'text',
+            required: true,
+            description: 'Segundo texto',
+            placeholder: 'Teste',
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: 'Jornal',
     endpoints: [
       {
