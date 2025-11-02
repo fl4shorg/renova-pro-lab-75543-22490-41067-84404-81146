@@ -1339,6 +1339,22 @@ export const apiCategories: ApiCategory[] = [
         category: 'Figurinhas',
         parameters: [],
       },
+      {
+        id: 'bratvideo',
+        method: 'GET',
+        path: '/bratvideo',
+        alias: 'Brat Video',
+        category: 'Figurinhas',
+        parameters: [
+          {
+            name: 'text',
+            type: 'text',
+            required: true,
+            description: 'Texto para o vídeo',
+            placeholder: 'flash kuun',
+          },
+        ],
+      },
     ],
   },
   {
@@ -5716,6 +5732,29 @@ export const apiCategories: ApiCategory[] = [
             required: true,
             description: 'URL da imagem',
             placeholder: 'https://i.ibb.co/N2qWPxb7/88dfe41c43186feb6baaf7b8b47cea85.jpg',
+          },
+        ],
+      },
+      {
+        id: 'tools-tradutor',
+        method: 'GET',
+        path: '/tradutor',
+        alias: 'Tradutor',
+        category: 'Tools',
+        parameters: [
+          {
+            name: 'texto',
+            type: 'text',
+            required: true,
+            description: 'Texto para traduzir',
+            placeholder: 'Hello World',
+          },
+          {
+            name: 'target',
+            type: 'text',
+            required: true,
+            description: 'Idioma de destino',
+            placeholder: 'pt',
           },
         ],
       },
