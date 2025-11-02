@@ -5378,6 +5378,59 @@ export const apiCategories: ApiCategory[] = [
       },
     ],
   },
+  {
+    name: 'IMDB',
+    endpoints: [
+      {
+        id: 'imdb-top10',
+        method: 'GET',
+        path: '/imdb/top10',
+        alias: 'Top 10 Filmes IMDB',
+        category: 'IMDB',
+        parameters: [],
+      },
+      {
+        id: 'imdb-filme',
+        method: 'GET',
+        path: '/imdb/filme',
+        alias: 'Buscar Filme IMDB',
+        category: 'IMDB',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Nome do filme',
+            placeholder: 'SEU_FILME_AQUI',
+          },
+        ],
+      },
+      {
+        id: 'anime-top10',
+        method: 'GET',
+        path: '/anime/top10',
+        alias: 'Top 10 Animes',
+        category: 'IMDB',
+        parameters: [],
+      },
+      {
+        id: 'anime-buscar',
+        method: 'GET',
+        path: '/anime/anime',
+        alias: 'Buscar Anime',
+        category: 'IMDB',
+        parameters: [
+          {
+            name: 'nome',
+            type: 'text',
+            required: true,
+            description: 'Nome do anime',
+            placeholder: 'Naruto',
+          },
+        ],
+      },
+    ],
+  },
   ];
 
 export const getTotalEndpoints = (): number => {
