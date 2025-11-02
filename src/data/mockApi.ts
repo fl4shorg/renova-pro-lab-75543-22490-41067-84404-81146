@@ -13,6 +13,57 @@ export const servers: Server[] = [
 
 export const apiCategories: ApiCategory[] = [
   {
+    name: 'IA',
+    endpoints: [
+      {
+        id: 'ia-copilot',
+        method: 'GET',
+        path: '/copilot',
+        alias: 'Copilot',
+        category: 'IA',
+        parameters: [
+          {
+            name: 'message',
+            type: 'text',
+            required: true,
+            description: 'Mensagem para o Copilot',
+            placeholder: 'Olá Copilot',
+          },
+          {
+            name: 'model',
+            type: 'text',
+            required: true,
+            description: 'Modelo a usar',
+            placeholder: 'default',
+          },
+        ],
+      },
+      {
+        id: 'ia-deepseek',
+        method: 'GET',
+        path: '/deepseek',
+        alias: 'DeepSeek',
+        category: 'IA',
+        parameters: [
+          {
+            name: 'input',
+            type: 'text',
+            required: true,
+            description: 'Pergunta ou entrada',
+            placeholder: 'quem descobriu o Brasil',
+          },
+          {
+            name: 'model',
+            type: 'text',
+            required: true,
+            description: 'Modelo a usar',
+            placeholder: 'deepseek-v3',
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: 'Download',
     endpoints: [
       {
