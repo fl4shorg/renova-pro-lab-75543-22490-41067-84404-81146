@@ -956,6 +956,70 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'signo-search',
+        method: 'GET',
+        path: '/signo',
+        alias: 'Signo',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Nome do signo',
+            placeholder: 'touro',
+          },
+        ],
+      },
+      {
+        id: 'dicionario-search',
+        method: 'GET',
+        path: '/dicionario',
+        alias: 'Dicionário',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Palavra para pesquisar',
+            placeholder: 'ceu',
+          },
+        ],
+      },
+      {
+        id: 'amazon-search',
+        method: 'GET',
+        path: '/amazon',
+        alias: 'Amazon',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Produto para pesquisar',
+            placeholder: 'iphone',
+          },
+        ],
+      },
+      {
+        id: 'arma-search',
+        method: 'GET',
+        path: '/arma',
+        alias: 'Arma',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Arma para pesquisar',
+            placeholder: 'glock',
+          },
+        ],
+      },
     ],
   },
   {
