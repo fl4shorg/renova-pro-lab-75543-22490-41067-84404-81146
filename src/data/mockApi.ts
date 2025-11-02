@@ -1020,6 +1020,22 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'genshin-search',
+        method: 'GET',
+        path: '/genshin',
+        alias: 'Genshin Impact',
+        category: 'Pesquisa',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Nome do personagem',
+            placeholder: 'Diluc',
+          },
+        ],
+      },
     ],
   },
   {
@@ -5886,6 +5902,22 @@ export const apiCategories: ApiCategory[] = [
             required: true,
             description: 'Idioma de destino',
             placeholder: 'pt',
+          },
+        ],
+      },
+      {
+        id: 'tools-ytranscript',
+        method: 'GET',
+        path: '/api/ytranscript',
+        alias: 'YouTube Transcrição',
+        category: 'Tools',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do vídeo do YouTube',
+            placeholder: 'https://youtu.be/i4wfWF2ENII?si=P0m7pbm-aBZXe-kv',
           },
         ],
       },
