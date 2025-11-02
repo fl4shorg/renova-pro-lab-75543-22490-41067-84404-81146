@@ -16,6 +16,7 @@ export interface Parameter {
   placeholder?: string;
   options?: string[];
   defaultValue?: string;
+  hidden?: boolean;
 }
 
 export interface ApiCategory {

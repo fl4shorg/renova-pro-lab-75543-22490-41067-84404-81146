@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ApiEndpoint } from '@/types/api';
 import { Loader2 } from 'lucide-react';
 
@@ -13,6 +13,16 @@ interface EndpointFormProps {
 export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasResponse }: EndpointFormProps) => {
   const [formData, setFormData] = useState<Record<string, string>>({});
 
+  useEffect(() => {
+    const hiddenParams: Record<string, string> = {};
+    endpoint.parameters?.forEach(param => {
+      if (param.hidden && param.defaultValue) {
+        hiddenParams[param.name] = param.defaultValue;
+      }
+    });
+    setFormData(hiddenParams);
+  }, [endpoint]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
@@ -24,9 +34,9 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {endpoint.parameters && endpoint.parameters.length > 0 && (
+      {endpoint.parameters && endpoint.parameters.filter(p => !p.hidden).length > 0 && (
         <div className="space-y-3">
-          {endpoint.parameters.map((param) => (
+          {endpoint.parameters.filter(param => !param.hidden).map((param) => (
             <div key={param.name}>
               <label className="block text-xs font-medium text-muted-foreground mb-1 font-sans">
                 {param.name}

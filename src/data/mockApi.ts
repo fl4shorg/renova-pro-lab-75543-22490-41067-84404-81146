@@ -3754,6 +3754,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '1',
             defaultValue: '1',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3778,6 +3779,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '2',
             defaultValue: '2',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3802,6 +3804,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '3',
             defaultValue: '3',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3826,6 +3829,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '4',
             defaultValue: '4',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3850,6 +3854,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '5',
             defaultValue: '5',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3874,6 +3879,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '6',
             defaultValue: '6',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3898,6 +3904,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '7',
             defaultValue: '7',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3922,6 +3929,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '8',
             defaultValue: '8',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3946,6 +3954,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '9',
             defaultValue: '9',
+            hidden: true,
           },
           {
             name: 'text',
@@ -3970,6 +3979,7 @@ export const apiCategories: ApiCategory[] = [
             description: 'Número da plaquinha',
             placeholder: '10',
             defaultValue: '10',
+            hidden: true,
           },
           {
             name: 'text',
