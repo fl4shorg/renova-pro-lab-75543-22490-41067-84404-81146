@@ -15,6 +15,17 @@ export const ThemeToggle = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+
+    // Listen for theme changes from other ThemeToggle components
+    const handleThemeChange = (event: CustomEvent<'light' | 'dark'>) => {
+      setTheme(event.detail);
+    };
+
+    window.addEventListener('themeChange', handleThemeChange as EventListener);
+
+    return () => {
+      window.removeEventListener('themeChange', handleThemeChange as EventListener);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -27,6 +38,9 @@ export const ThemeToggle = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+
+    // Dispatch custom event to sync all ThemeToggle instances
+    window.dispatchEvent(new CustomEvent('themeChange', { detail: newTheme }));
   };
 
   return (
