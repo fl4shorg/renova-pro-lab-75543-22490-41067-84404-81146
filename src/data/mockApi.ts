@@ -416,6 +416,118 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'likevideo-download',
+        method: 'GET',
+        path: '/likevideo',
+        alias: 'Likee Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do vídeo Likee',
+            placeholder: 'https://l.likee.video/v/mQJ9Gv',
+          },
+        ],
+      },
+      {
+        id: 'gdlink-download',
+        method: 'GET',
+        path: '/download/gdlink',
+        alias: 'Google Drive Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do Google Drive',
+            placeholder: 'https://drive.google.com/file/d/1YdAfHJh1utOGvtpUXHIUZiBas2dkWa2B/view?usp=drivesdk',
+          },
+        ],
+      },
+      {
+        id: 'dafont-download',
+        method: 'GET',
+        path: '/api/dafont/download',
+        alias: 'DaFont Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'link',
+            type: 'text',
+            required: true,
+            description: 'Link da fonte no DaFont',
+            placeholder: 'https://www.dafont.com/roboto.font',
+          },
+        ],
+      },
+      {
+        id: 'capcut2-download',
+        method: 'GET',
+        path: '/download/capcut2',
+        alias: 'CapCut Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do CapCut',
+            placeholder: 'https://www.capcut.com/tv2/ZSUEfKnJg/',
+          },
+        ],
+      },
+      {
+        id: 'audiomeme-download',
+        method: 'GET',
+        path: '/audiomeme',
+        alias: 'Audio Meme',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'q',
+            type: 'text',
+            required: true,
+            description: 'Termo de pesquisa do meme',
+            placeholder: 'lula',
+          },
+        ],
+      },
+      {
+        id: 'apple-download',
+        method: 'GET',
+        path: '/apple',
+        alias: 'Apple Music Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do Apple Music',
+            placeholder: 'https://music.apple.com/us/song/lover-girl/1848207732',
+          },
+        ],
+      },
+      {
+        id: 'terabox-download',
+        method: 'GET',
+        path: '/terabox',
+        alias: 'TeraBox Download',
+        category: 'Download',
+        parameters: [
+          {
+            name: 'url',
+            type: 'text',
+            required: true,
+            description: 'URL do TeraBox',
+            placeholder: 'https://1024terabox.com/s/1lqQc8B3zvkwh5cqByDatog',
+          },
+        ],
+      },
     ],
   },
   {
