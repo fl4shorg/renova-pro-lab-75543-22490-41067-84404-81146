@@ -1146,6 +1146,54 @@ export const apiCategories: ApiCategory[] = [
           },
         ],
       },
+      {
+        id: 'stalker-tiktok',
+        method: 'GET',
+        path: '/stalk/ttstalk',
+        alias: 'Stalker TikTok',
+        category: 'Stalker',
+        parameters: [
+          {
+            name: 'username',
+            type: 'text',
+            required: true,
+            description: 'Nome de usuário do TikTok',
+            placeholder: 'neet.chat',
+          },
+        ],
+      },
+      {
+        id: 'stalker-roblox',
+        method: 'GET',
+        path: '/stalk/stalkroblox',
+        alias: 'Stalker Roblox',
+        category: 'Stalker',
+        parameters: [
+          {
+            name: 'user',
+            type: 'text',
+            required: true,
+            description: 'Nome de usuário do Roblox',
+            placeholder: 'neettk',
+          },
+        ],
+      },
+      {
+        id: 'stalker-genshin',
+        method: 'GET',
+        path: '/stalk/genshinstalk',
+        alias: 'Stalker Genshin',
+        category: 'Stalker',
+        parameters: [
+          {
+            name: 'uid',
+            type: 'text',
+            required: true,
+            description: 'UID do jogador Genshin Impact',
+            placeholder: '686944729',
+          },
+        ],
+      },
     ],
   },
   {
