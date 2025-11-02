@@ -1,9 +1,12 @@
 import { useState, useRef } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { getTotalEndpoints, getTotalCategories } from '@/data/mockApi';
 
 export const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const totalEndpoints = getTotalEndpoints();
+  const totalCategories = getTotalCategories();
 
   const handleEnter = () => {
     if (audioRef.current) {
@@ -33,7 +36,7 @@ export const WelcomeModal = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
         <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
-        <DialogDescription className="sr-only">Explore 359 endpoints organizados em 14 categorias. Teste, documente e integre!</DialogDescription>
+        <DialogDescription className="sr-only">Explore {totalEndpoints} endpoints organizados em {totalCategories} categorias. Teste, documente e integre!</DialogDescription>
         <div className="absolute inset-0 gradient-primary opacity-5 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
@@ -62,7 +65,7 @@ export const WelcomeModal = () => {
           </h2>
 
           <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
-            Explore <span className="text-primary font-bold">359 endpoints</span> organizados em <span className="text-primary font-bold">14 categorias</span>. Teste, documente e integre!
+            Explore <span className="text-primary font-bold">{totalEndpoints} endpoints</span> organizados em <span className="text-primary font-bold">{totalCategories} categorias</span>. Teste, documente e integre!
           </p>
 
           <button
