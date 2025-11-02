@@ -4096,6 +4096,75 @@ export const apiCategories: ApiCategory[] = [
       },
     ],
   },
+  {
+    name: 'Consultas',
+    endpoints: [
+      {
+        id: 'consulta-telefone',
+        method: 'GET',
+        path: '/consulta/telefone',
+        alias: 'Consulta Telefone',
+        category: 'Consultas',
+        parameters: [
+          {
+            name: 'query',
+            type: 'text',
+            required: true,
+            description: 'Número de telefone',
+            placeholder: '1182839393939',
+          },
+        ],
+      },
+      {
+        id: 'consulta-cpf',
+        method: 'GET',
+        path: '/consulta/cpf',
+        alias: 'Consulta CPF',
+        category: 'Consultas',
+        parameters: [
+          {
+            name: 'query',
+            type: 'text',
+            required: true,
+            description: 'Número do CPF',
+            placeholder: '12345678900',
+          },
+        ],
+      },
+      {
+        id: 'consulta-nome',
+        method: 'GET',
+        path: '/consulta/nome',
+        alias: 'Consulta Nome',
+        category: 'Consultas',
+        parameters: [
+          {
+            name: 'query',
+            type: 'text',
+            required: true,
+            description: 'Nome completo',
+            placeholder: 'João Silva',
+          },
+        ],
+      },
+      {
+        id: 'consulta-placa',
+        method: 'GET',
+        path: '/consulta/placa',
+        alias: 'Consulta Placa',
+        category: 'Consultas',
+        parameters: [
+          {
+            name: 'query',
+            type: 'text',
+            required: true,
+            description: 'Número da placa',
+            placeholder: 'ABC1234',
+          },
+        ],
+      },
+    ],
+  },
   ];
 
 export const getTotalEndpoints = (): number => {
