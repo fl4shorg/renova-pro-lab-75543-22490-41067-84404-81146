@@ -8,13 +8,24 @@ export const WelcomeModal = () => {
   const totalEndpoints = getTotalEndpoints();
   const totalCategories = getTotalCategories();
 
-  const handleEnter = () => {
+  const playMusic = () => {
     if (audioRef.current) {
       audioRef.current.play().catch((error) => {
         console.log('Autoplay prevented:', error);
       });
     }
+  };
+
+  const handleEnter = () => {
+    playMusic();
     setIsOpen(false);
+  };
+
+  const handleOpenChange = (open: boolean) => {
+    if (!open) {
+      playMusic();
+    }
+    setIsOpen(open);
   };
 
   const getCurrentDate = () => {
@@ -33,7 +44,7 @@ export const WelcomeModal = () => {
   return (
     <>
       <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" loop />
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={handleOpenChange}>
         <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
         <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
         <DialogDescription className="sr-only">Explore {totalEndpoints} endpoints organizados em {totalCategories} categorias. Teste, documente e integre!</DialogDescription>
