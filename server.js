@@ -72,8 +72,12 @@ app.get('/api/proxy-hentai', async (req, res) => {
 app.use(express.static(join(__dirname, 'dist')));
 
 // Handle client-side routing - serve index.html for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'dist', 'index.html'));
+app.use((req, res, next) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(join(__dirname, 'dist', 'index.html'));
+  } else {
+    next();
+  }
 });
 
 app.listen(PORT, '0.0.0.0', () => {
