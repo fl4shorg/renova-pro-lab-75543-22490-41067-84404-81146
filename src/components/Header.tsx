@@ -26,7 +26,7 @@ export const Header = () => {
           
           <div className="h-1.5 w-32 gradient-primary rounded-full mb-6 shadow-glow mx-auto sm:mx-0 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
           
-          <p className="text-base text-white/90 max-w-3xl font-sans leading-relaxed mb-6 font-semibold">
+          <p className="text-base max-w-3xl font-sans leading-relaxed mb-6" style={{backgroundImage: "linear-gradient(135deg, #00d4ff 0%, #a78bfa 100%)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", fontWeight: "600"}}>
             Plataforma completa de REST API com monitoramento de saúde em tempo real. 
             <span className="block mt-2 text-sm">Teste endpoints instantaneamente com nossa documentação interativa e veja atualizações de status ao vivo.</span>
           </p>
