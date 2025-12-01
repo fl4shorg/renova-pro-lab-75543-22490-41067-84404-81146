@@ -122,35 +122,33 @@ const Index = () => {
             </div>
           </div>
           
-          {/* IP Info Card */}
-          <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl glass-effect-strong border-2 border-cyan-500/30 hover:border-purple-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-cyan-500/20 w-full max-w-md">
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
+          {/* IP Info Card - Brutalist */}
+          <div className="w-full max-w-md border-3 border-accent bg-card animate-fade-in">
+            {/* Header */}
+            <div className="border-b-3 border-accent px-3 py-2 bg-gradient-to-r from-accent to-primary">
+              <p className="font-mono font-black text-xs text-foreground tracking-widest">
+                INFORMAÇÕES DE CONEXÃO
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="p-3 space-y-3">
+              {/* IP Display */}
+              <div className="border-2 border-accent bg-accent/10 p-3">
+                <div className="flex items-center justify-between">
+                  <p className="font-mono font-bold text-xs text-foreground uppercase">Seu IP:</p>
+                  <p className="font-mono text-sm font-black text-accent">
+                    {userIp}
+                  </p>
                 </div>
-                <h3 className="text-sm font-bold font-sans bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent tracking-wide">
-                  INFORMAÇÕES DE CONEXÃO
-                </h3>
               </div>
-              
-              <div className="flex items-center justify-center gap-2">
-                <p className="text-muted-foreground text-sm">Seu IP:</p>
-                <p className="text-foreground font-mono text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  {userIp}
-                </p>
-                <div className="ml-2">
-                  <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
-                  </svg>
-                </div>
+
+              {/* Status Indicator */}
+              <div className="border-2 border-accent/50 px-2 py-2 flex items-center gap-2">
+                <div className="w-2 h-2 bg-accent"></div>
+                <span className="font-mono text-xs font-bold text-foreground uppercase">
+                  CONECTADO
+                </span>
               </div>
             </div>
           </div>
@@ -173,50 +171,65 @@ const Index = () => {
           </div>
         )}
 
-        {/* License & Usage Section */}
-        <div className="mt-6 mb-2 animate-fade-in">
-          <div className="relative rounded-xl bg-card/50 border border-border p-5 max-w-xl mx-auto">
-            <h2 className="text-xl font-bold mb-3 text-foreground">
-              Licença & Uso
-            </h2>
-            
-            <p className="text-foreground/80 text-sm leading-relaxed mb-5">
-              Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
-            </p>
-            
-            <div className="flex flex-col gap-2 mb-0">
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Sem Autenticação Necessária</span>
+        {/* License & Usage Section - Brutalist */}
+        <div className="mt-6 mb-4 max-w-xl mx-auto animate-fade-in">
+          <div className="border-3 border-primary bg-card">
+            {/* Header */}
+            <div className="border-b-3 border-primary px-4 py-3 bg-gradient-to-r from-primary to-accent">
+              <p className="font-mono font-black text-sm text-foreground tracking-widest">LICENÇA & USO</p>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 space-y-3">
+              {/* Description */}
+              <div className="border-2 border-primary/50 p-3">
+                <p className="font-mono text-xs text-foreground leading-relaxed">
+                  Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
+                </p>
               </div>
-              
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Sem Limite de Requisições</span>
-              </div>
-              
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Grátis Para Sempre</span>
+
+              {/* Features */}
+              <div className="space-y-2">
+                <div className="border-2 border-primary px-3 py-2 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary"></div>
+                  <span className="font-mono text-xs font-bold text-foreground uppercase">Sem Autenticação Necessária</span>
+                </div>
+                
+                <div className="border-2 border-primary px-3 py-2 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary"></div>
+                  <span className="font-mono text-xs font-bold text-foreground uppercase">Sem Limite de Requisições</span>
+                </div>
+                
+                <div className="border-2 border-primary px-3 py-2 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary"></div>
+                  <span className="font-mono text-xs font-bold text-foreground uppercase">Grátis Para Sempre</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Footer Section */}
-        <div className="mt-2 pb-2 text-center animate-fade-in">
-          <p className="text-gray-400 text-sm mb-1">
-            Obrigado a todos os usuários e contribuidores.
-          </p>
-          <p className="text-sm font-bold animated-gradient-text">
-            © Neext Ltda. | Todos os direitos reservados.
-          </p>
+        {/* Footer Section - Brutalist */}
+        <div className="mt-4 pb-4 animate-fade-in">
+          <div className="border-3 border-accent max-w-xl mx-auto bg-card">
+            {/* Header */}
+            <div className="border-b-3 border-accent px-4 py-3 bg-gradient-to-r from-accent to-primary">
+              <p className="font-mono font-black text-sm text-foreground tracking-widest">CRÉDITOS</p>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 space-y-3 text-center">
+              <p className="font-mono text-xs text-foreground">
+                Obrigado a todos os usuários e contribuidores.
+              </p>
+              
+              <div className="border-2 border-accent/50 px-3 py-2">
+                <p className="font-mono font-black text-xs text-accent tracking-wide">
+                  © NEEXT LTDA. | TODOS OS DIREITOS RESERVADOS.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
