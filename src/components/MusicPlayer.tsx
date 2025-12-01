@@ -33,9 +33,9 @@ export const MusicPlayer = () => {
         <div className="flex gap-3">
           <div className="w-16 h-16 border-2 border-primary bg-primary/10 flex-shrink-0 overflow-hidden">
             <img
-              src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png"
+              src="https://i.ytimg.com/vi/JZ_8RmkzcKw/hq720.jpg"
               alt="Album"
-              className="w-full h-full object-cover brightness-0 invert"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1 flex flex-col justify-center border-l-2 border-primary pl-2">
