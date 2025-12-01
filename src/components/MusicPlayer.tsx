@@ -1,4 +1,4 @@
-import { Play, Pause, Volume2 } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 import { useAudio } from '@/contexts/AudioContext';
 
 export const MusicPlayer = () => {
@@ -16,66 +16,91 @@ export const MusicPlayer = () => {
     seek(newTime);
   };
 
+  const progressPercent = duration ? (currentTime / duration) * 100 : 0;
+
   return (
-    <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl glass-effect-strong border-2 border-amber-500/30 hover:border-yellow-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-amber-500/20 w-full max-w-md animate-fade-in">
-      {/* Glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-amber-600/10 to-yellow-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      
-      <div className="relative z-10">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="flex-shrink-0">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border border-amber-400/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-              <Volume2 className="w-6 h-6 text-amber-400" />
-            </div>
-          </div>
-          <h3 className="text-sm font-bold font-sans bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent tracking-wide">
+    <div className="w-full max-w-md border-4 border-primary bg-card animate-fade-in">
+      {/* Header */}
+      <div className="border-b-4 border-primary px-4 py-3 bg-gradient-to-r from-primary to-accent">
+        <div className="flex items-center gap-3">
+          <div className="w-3 h-3 bg-primary border-2 border-foreground"></div>
+          <h3 className="font-mono font-black text-sm text-foreground tracking-widest">
             MÚSICA AMBIENTE
           </h3>
         </div>
+      </div>
 
-        {/* Music Info */}
-        <div className="mb-4">
-          <p className="text-center text-foreground font-semibold text-sm mb-2">
-            Welcome Music
-          </p>
-          <p className="text-center text-muted-foreground text-xs">
-            Relaxe enquanto explora a API
-          </p>
+      {/* Content */}
+      <div className="p-4 space-y-4">
+        {/* Song Info */}
+        <div className="border-2 border-primary/50 p-3">
+          <p className="font-mono font-bold text-foreground text-sm">Welcome Music</p>
+          <p className="font-mono text-xs text-muted-foreground">Relaxe enquanto explora a API</p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-3 space-y-2">
-          <input
-            type="range"
-            min="0"
-            max={duration || 0}
-            value={currentTime}
-            onChange={handleProgressChange}
-            className="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-400 hover:accent-yellow-400 transition-colors"
-          />
-          <div className="flex justify-between text-xs text-muted-foreground font-mono">
-            <span>{formatTime(currentTime)}</span>
-            <span>{formatTime(duration)}</span>
+        {/* Progress Bar - Brutalist Style */}
+        <div className="space-y-2">
+          <div className="relative h-8 bg-primary/10 border-3 border-primary overflow-hidden">
+            <div
+              className="absolute top-0 left-0 h-full bg-primary transition-all"
+              style={{ width: `${progressPercent}%` }}
+            ></div>
+            <input
+              type="range"
+              min="0"
+              max={duration || 0}
+              value={currentTime}
+              onChange={handleProgressChange}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+            />
+          </div>
+          
+          {/* Time Display */}
+          <div className="flex justify-between items-center border-2 border-primary/30 px-3 py-2 bg-card">
+            <span className="font-mono font-bold text-xs text-foreground">
+              {formatTime(currentTime)}
+            </span>
+            <div className="w-1 h-1 bg-primary"></div>
+            <span className="font-mono font-bold text-xs text-muted-foreground">
+              {formatTime(duration)}
+            </span>
           </div>
         </div>
 
-        {/* Play Button */}
+        {/* Play Button - Brutalist */}
         <button
           onClick={togglePlay}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-400/30 hover:border-yellow-400/60 text-amber-300 hover:text-yellow-300 font-semibold transition-all duration-300 group/btn hover:bg-gradient-to-r hover:from-amber-500/30 hover:to-yellow-500/30"
+          className="w-full border-3 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-black py-4 px-4 text-sm tracking-widest transition-colors active:scale-95 active:translate-y-1"
         >
-          {isPlaying ? (
-            <>
-              <Pause className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-              <span>Pausar</span>
-            </>
-          ) : (
-            <>
-              <Play className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-              <span>Reproduzir</span>
-            </>
-          )}
+          <div className="flex items-center justify-center gap-3">
+            {isPlaying ? (
+              <>
+                <Pause className="w-5 h-5" />
+                <span>PAUSAR</span>
+              </>
+            ) : (
+              <>
+                <Play className="w-5 h-5" />
+                <span>REPRODUZIR</span>
+              </>
+            )}
+          </div>
         </button>
+
+        {/* Status Indicator */}
+        <div className="border-2 border-primary/50 px-3 py-2 flex items-center gap-2">
+          <div className={`w-3 h-3 ${isPlaying ? 'bg-accent' : 'bg-muted-foreground'}`}></div>
+          <span className="font-mono text-xs font-bold text-foreground uppercase">
+            {isPlaying ? 'TOCANDO' : 'PARADO'}
+          </span>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t-4 border-primary bg-primary/5 px-4 py-2">
+        <p className="font-mono text-xs text-muted-foreground text-center">
+          ▌▌ INTERFACE BRUTALISTA
+        </p>
       </div>
     </div>
   );
