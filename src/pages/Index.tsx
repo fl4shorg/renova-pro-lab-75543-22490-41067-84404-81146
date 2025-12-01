@@ -173,50 +173,52 @@ const Index = () => {
           </div>
         )}
 
-        {/* License & Usage Section */}
+        {/* License & Usage Section - Brutalist Style */}
         <div className="mt-6 mb-2 animate-fade-in">
-          <div className="relative rounded-xl bg-card/50 border border-border p-5 max-w-xl mx-auto">
-            <h2 className="text-xl font-bold mb-3 text-foreground">
-              Licença & Uso
-            </h2>
-            
-            <p className="text-foreground/80 text-sm leading-relaxed mb-5">
-              Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
-            </p>
-            
-            <div className="flex flex-col gap-2 mb-0">
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Sem Autenticação Necessária</span>
+          <div className="border-4 border-primary bg-card max-w-2xl mx-auto">
+            {/* Header */}
+            <div className="border-b-4 border-primary px-4 py-3 bg-gradient-to-r from-primary to-accent">
+              <h2 className="font-mono font-black text-sm text-foreground tracking-widest">
+                LICENÇA & USO
+              </h2>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 space-y-4">
+              {/* Main Description */}
+              <p className="font-mono text-sm text-foreground leading-relaxed border-l-4 border-primary pl-3">
+                Esta API é gratuita para uso em projetos pessoais e comerciais. Pedimos apenas que você a use com responsabilidade e não abuse do serviço.
+              </p>
+
+              {/* Features Box */}
+              <div className="border-2 border-primary p-3 space-y-2 bg-primary/5">
+                <div className="flex items-center gap-3 border-b-2 border-primary/30 pb-2">
+                  <div className="w-2 h-2 bg-primary"></div>
+                  <span className="font-mono font-bold text-sm text-foreground">SEM AUTENTICAÇÃO NECESSÁRIA</span>
+                </div>
+                <div className="flex items-center gap-3 border-b-2 border-primary/30 pb-2">
+                  <div className="w-2 h-2 bg-accent"></div>
+                  <span className="font-mono font-bold text-sm text-foreground">SEM LIMITE DE REQUISIÇÕES</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary"></div>
+                  <span className="font-mono font-bold text-sm text-foreground">GRÁTIS PARA SEMPRE</span>
+                </div>
               </div>
-              
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Sem Limite de Requisições</span>
-              </div>
-              
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
-                <svg className="w-4 h-4 text-foreground/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-foreground/90 text-sm">Grátis Para Sempre</span>
+
+              {/* Thanks & Copyright */}
+              <div className="border-t-2 border-primary pt-3 space-y-2">
+                <p className="font-mono text-xs text-muted-foreground">
+                  Obrigado a todos os usuários e contribuidores.
+                </p>
+                <div className="border-2 border-primary/50 px-3 py-2 bg-primary/5">
+                  <p className="font-mono font-bold text-xs text-foreground tracking-wide">
+                    © NEEXT LTDA. | TODOS OS DIREITOS RESERVADOS
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Footer Section */}
-        <div className="mt-2 pb-2 text-center animate-fade-in">
-          <p className="text-gray-400 text-sm mb-1">
-            Obrigado a todos os usuários e contribuidores.
-          </p>
-          <p className="text-sm font-bold animated-gradient-text">
-            © Neext Ltda. | Todos os direitos reservados.
-          </p>
         </div>
       </main>
     </div>
