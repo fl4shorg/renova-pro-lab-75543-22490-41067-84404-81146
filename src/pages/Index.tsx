@@ -116,14 +116,6 @@ const Index = () => {
                   Seja bem-vindo, aproveite!
                 </p>
               </div>
-
-              {/* Status Indicator */}
-              <div className="border-2 border-primary/50 px-2 py-2 flex items-center gap-2 justify-center">
-                <div className="w-2 h-2 bg-primary"></div>
-                <span className="font-mono text-xs font-bold text-foreground uppercase">
-                  ONLINE
-                </span>
-              </div>
             </div>
           </div>
           
