@@ -33,31 +33,6 @@ export const SystemMonitor = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const maxValue = 100;
-  const chartWidth = 320;
-  const chartHeight = 120;
-  const padding = 8;
-  const innerWidth = chartWidth - padding * 2;
-  const innerHeight = chartHeight - padding * 2;
-
-  // Calcular pontos do gráfico
-  const pointSpacing = innerWidth / (data.length - 1);
-  const points = data.map((item, index) => {
-    const x = padding + index * pointSpacing;
-    const y = padding + innerHeight - (item.value / maxValue) * innerHeight;
-    return `${x},${y}`;
-  }).join(' ');
-
-  // Calcular área sob a linha (para preenchimento)
-  const areaPoints = data.map((item, index) => {
-    const x = padding + index * pointSpacing;
-    const y = padding + innerHeight - (item.value / maxValue) * innerHeight;
-    return `${x},${y}`;
-  });
-  areaPoints.push(`${padding + (data.length - 1) * pointSpacing},${padding + innerHeight}`);
-  areaPoints.push(`${padding},${padding + innerHeight}`);
-  const areaPath = areaPoints.join(' ');
-
   return (
     <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in overflow-hidden">
       {/* Header */}
@@ -67,79 +42,21 @@ export const SystemMonitor = () => {
         </p>
       </div>
 
-      {/* Graph */}
-      <div className="p-3 flex justify-center overflow-hidden">
-        <svg width={String(chartWidth)} height={String(chartHeight)} viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full">
-          {/* Grid background */}
-          <defs>
-            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="hsl(262 83% 58%)" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="hsl(262 83% 58%)" stopOpacity="0.05" />
-            </linearGradient>
-          </defs>
-
-          {/* Grid lines */}
-          <line
-            x1={String(padding)}
-            y1={String(padding + innerHeight * 0.25)}
-            x2={String(chartWidth - padding)}
-            y2={String(padding + innerHeight * 0.25)}
-            stroke="hsl(262 83% 58%)"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          <line
-            x1={String(padding)}
-            y1={String(padding + innerHeight * 0.5)}
-            x2={String(chartWidth - padding)}
-            y2={String(padding + innerHeight * 0.5)}
-            stroke="hsl(262 83% 58%)"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          <line
-            x1={String(padding)}
-            y1={String(padding + innerHeight * 0.75)}
-            x2={String(chartWidth - padding)}
-            y2={String(padding + innerHeight * 0.75)}
-            stroke="hsl(262 83% 58%)"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-
-          {/* Área sob a linha */}
-          <polygon
-            points={areaPath}
-            fill="url(#areaGradient)"
-          />
-
-          {/* Linha principal */}
-          <polyline
-            points={points}
-            fill="none"
-            stroke="hsl(190 95% 55%)"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-
-          {/* Pontos */}
-          {data.map((item, index) => {
-            const x = padding + index * pointSpacing;
-            const y = padding + innerHeight - (item.value / maxValue) * innerHeight;
-            const isRecent = index >= data.length - 3;
-            return (
-              <circle
-                key={index}
-                cx={String(x)}
-                cy={String(y)}
-                r={isRecent ? "3" : "2"}
-                fill={isRecent ? "hsl(190 95% 55%)" : "hsl(262 83% 58%)"}
-                opacity={isRecent ? "1" : "0.6"}
-              />
-            );
-          })}
-        </svg>
+      {/* Graph Animation */}
+      <div className="p-4 h-24 flex items-center justify-center">
+        <div className="w-full h-full bg-gradient-to-r from-primary/10 via-accent/20 to-primary/10 rounded-sm border border-primary/30 flex items-end justify-around gap-1 overflow-hidden px-2 py-3">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className="flex-1 bg-gradient-to-t from-accent to-primary rounded-sm"
+              style={{
+                height: `${(item.value / 100) * 100}%`,
+                opacity: 0.6 + (index / data.length) * 0.4,
+                animation: `fadeIn 0.8s ease-in-out`,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
