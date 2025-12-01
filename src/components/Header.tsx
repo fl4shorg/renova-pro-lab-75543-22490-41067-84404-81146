@@ -2,34 +2,38 @@ export const Header = () => {
   return (
     <header className="mb-16 animate-fade-in">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-        <div className="relative w-16 h-16 flex items-center justify-center flex-shrink-0">
-          <div className="absolute inset-0 gradient-primary rounded-2xl blur-xl opacity-60 animate-shimmer group-hover:opacity-80 transition-smooth" 
-               style={{ backgroundSize: '200% 100%' }}></div>
-          <div className="relative w-16 h-16 gradient-primary rounded-2xl p-3 shadow-glow hover:scale-110 transition-bounce">
-            <img 
-              src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
-              alt="Neext Logo"
-              className="w-full h-full object-contain brightness-0 invert"
-            />
-          </div>
+        <div className="w-16 h-16 border-3 border-primary bg-gradient-to-r from-primary to-accent flex items-center justify-center flex-shrink-0 p-3">
+          <img 
+            src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
+            alt="Neext Logo"
+            className="w-full h-full object-contain brightness-0 invert"
+          />
         </div>
         
         <div className="flex-1 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect-strong border border-primary/30 text-[10px] font-black mb-4 uppercase tracking-widest shadow-elegant hover:shadow-glow transition-smooth">
-            <div className="w-2 h-2 rounded-full gradient-primary shadow-glow animate-pulse" />
-            <span className="text-gradient">Live Documentation • v4.0</span>
+          {/* Version Badge - Brutalist */}
+          <div className="inline-flex items-center gap-2 px-3 py-2 border-2 border-primary text-[10px] font-black mb-4 uppercase tracking-widest bg-primary/10">
+            <div className="w-2 h-2 bg-primary"></div>
+            <span className="font-mono text-primary">LIVE DOCUMENTATION • V4.0</span>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl font-black mb-3 font-sans tracking-tight">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Shinobu API</span>
+          {/* Main Title - Brutalist */}
+          <h1 className="text-5xl sm:text-6xl font-black mb-3 font-mono tracking-widest text-foreground">
+            SHINOBU API
           </h1>
           
-          <div className="h-1.5 w-32 gradient-primary rounded-full mb-6 shadow-glow mx-auto sm:mx-0 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
+          {/* Divider */}
+          <div className="h-3 w-32 border-b-4 border-primary mb-6 mx-auto sm:mx-0"></div>
           
-          <p className="text-base text-muted-foreground max-w-3xl font-sans leading-relaxed mb-6">
-            Plataforma completa de REST API com monitoramento de saúde em tempo real. 
-            <span className="block mt-2 text-sm">Teste endpoints instantaneamente com nossa documentação interativa e veja atualizações de status ao vivo.</span>
-          </p>
+          {/* Description - Brutalist */}
+          <div className="border-3 border-primary bg-primary/5 p-4 mb-6 max-w-3xl mx-auto sm:mx-0">
+            <p className="font-mono text-xs leading-relaxed text-foreground">
+              Plataforma completa de REST API com monitoramento de saúde em tempo real.
+            </p>
+            <p className="font-mono text-xs leading-relaxed text-foreground mt-2">
+              Teste endpoints instantaneamente com nossa documentação interativa e veja atualizações de status ao vivo.
+            </p>
+          </div>
 
           <div className="flex flex-col gap-3 text-sm font-sans items-center sm:items-start">
             <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
