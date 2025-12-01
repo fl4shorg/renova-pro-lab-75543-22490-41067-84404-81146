@@ -63,7 +63,7 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
     <AudioContext.Provider value={{ isPlaying, duration, currentTime, togglePlay, seek, audioRef }}>
       <audio
         ref={audioRef}
-        src="/assets/welcome-music.m4a"
+        src="/assets/background-music.mp3"
         preload="auto"
         loop
       />
