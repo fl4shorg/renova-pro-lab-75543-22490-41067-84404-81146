@@ -68,8 +68,8 @@ export const SystemMonitor = () => {
       </div>
 
       {/* Graph */}
-      <div className="p-3 flex justify-center overflow-x-auto">
-        <svg width={chartWidth} height={chartHeight} className="overflow-visible">
+      <div className="p-3 flex justify-center overflow-hidden">
+        <svg width={String(chartWidth)} height={String(chartHeight)} viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full">
           {/* Grid background */}
           <defs>
             <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -80,29 +80,29 @@ export const SystemMonitor = () => {
 
           {/* Grid lines */}
           <line
-            x1={padding}
-            y1={padding + innerHeight * 0.25}
-            x2={chartWidth - padding}
-            y2={padding + innerHeight * 0.25}
-            stroke="hsl(var(--primary))"
+            x1={String(padding)}
+            y1={String(padding + innerHeight * 0.25)}
+            x2={String(chartWidth - padding)}
+            y2={String(padding + innerHeight * 0.25)}
+            stroke="hsl(262 83% 58%)"
             strokeWidth="0.5"
             opacity="0.2"
           />
           <line
-            x1={padding}
-            y1={padding + innerHeight * 0.5}
-            x2={chartWidth - padding}
-            y2={padding + innerHeight * 0.5}
-            stroke="hsl(var(--primary))"
+            x1={String(padding)}
+            y1={String(padding + innerHeight * 0.5)}
+            x2={String(chartWidth - padding)}
+            y2={String(padding + innerHeight * 0.5)}
+            stroke="hsl(262 83% 58%)"
             strokeWidth="0.5"
             opacity="0.2"
           />
           <line
-            x1={padding}
-            y1={padding + innerHeight * 0.75}
-            x2={chartWidth - padding}
-            y2={padding + innerHeight * 0.75}
-            stroke="hsl(var(--primary))"
+            x1={String(padding)}
+            y1={String(padding + innerHeight * 0.75)}
+            x2={String(chartWidth - padding)}
+            y2={String(padding + innerHeight * 0.75)}
+            stroke="hsl(262 83% 58%)"
             strokeWidth="0.5"
             opacity="0.2"
           />
@@ -131,8 +131,8 @@ export const SystemMonitor = () => {
             return (
               <circle
                 key={index}
-                cx={x}
-                cy={y}
+                cx={String(x)}
+                cy={String(y)}
                 r={isRecent ? "3" : "2"}
                 fill={isRecent ? "hsl(190 95% 55%)" : "hsl(262 83% 58%)"}
                 opacity={isRecent ? "1" : "0.6"}
