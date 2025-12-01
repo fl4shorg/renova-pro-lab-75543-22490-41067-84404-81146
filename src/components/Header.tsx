@@ -17,7 +17,7 @@ export const Header = () => {
         <div className="flex-1 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect-strong border border-primary/30 text-[10px] font-black mb-4 uppercase tracking-widest shadow-elegant hover:shadow-glow transition-smooth">
             <div className="w-2 h-2 rounded-full gradient-primary shadow-glow animate-pulse" />
-            <span className="text-gradient">Live Documentation • v4.0</span>
+            <span className="text-gradient">Live Documentation • v5.0</span>
           </div>
           
           <h1 className="text-5xl sm:text-6xl font-black mb-3 font-sans tracking-tight">

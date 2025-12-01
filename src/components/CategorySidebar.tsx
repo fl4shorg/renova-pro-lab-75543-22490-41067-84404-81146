@@ -117,7 +117,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
               </div>
               <div>
                 <h1 className="text-xl sm:text-2xl font-black tracking-tight gradient-text">Shinobu API</h1>
-                <p className="text-xs text-muted-foreground mt-0.5">Documentação v4.0</p>
+                <p className="text-xs text-muted-foreground mt-0.5">Documentação v5.0</p>
                 <div className="flex items-center gap-1.5 mt-1.5">
                   <Calendar className="w-3 h-3 text-primary/70" />
                   <span className="text-[10px] text-muted-foreground font-mono">

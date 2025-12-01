@@ -68,7 +68,7 @@ export const WelcomeModal = () => {
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-effect border border-primary/30 text-[10px] font-black mb-4 uppercase tracking-widest shadow-elegant">
             <div className="w-1.5 h-1.5 rounded-full gradient-primary shadow-glow animate-pulse"></div>
-            <span className="text-gradient">v4.0</span>
+            <span className="text-gradient">v5.0</span>
           </div>
 
           <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
