@@ -19,28 +19,34 @@ export const MusicPlayer = () => {
   const progressPercent = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="w-full max-w-md border-4 border-primary bg-card animate-fade-in">
+    <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in">
       {/* Header */}
-      <div className="border-b-4 border-primary px-4 py-3 bg-gradient-to-r from-primary to-accent">
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 bg-primary border-2 border-foreground"></div>
-          <h3 className="font-mono font-black text-sm text-foreground tracking-widest">
-            MÚSICA AMBIENTE
-          </h3>
-        </div>
+      <div className="border-b-3 border-primary px-3 py-2 bg-gradient-to-r from-primary to-accent">
+        <p className="font-mono font-black text-xs text-foreground tracking-widest">
+          MÚSICA AMBIENTE
+        </p>
       </div>
 
       {/* Content */}
-      <div className="p-4 space-y-4">
-        {/* Song Info */}
-        <div className="border-2 border-primary/50 p-3">
-          <p className="font-mono font-bold text-foreground text-sm">Welcome Music</p>
-          <p className="font-mono text-xs text-muted-foreground">Relaxe enquanto explora a API</p>
+      <div className="p-3 space-y-3">
+        {/* Album Art + Info */}
+        <div className="flex gap-3">
+          <div className="w-16 h-16 border-2 border-primary bg-primary/10 flex-shrink-0 overflow-hidden">
+            <img
+              src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png"
+              alt="Album"
+              className="w-full h-full object-cover brightness-0 invert"
+            />
+          </div>
+          <div className="flex-1 flex flex-col justify-center border-l-2 border-primary pl-2">
+            <p className="font-mono font-bold text-xs text-foreground leading-tight">Welcome Music</p>
+            <p className="font-mono text-xs text-muted-foreground mt-1">Relaxe enquanto explora</p>
+          </div>
         </div>
 
-        {/* Progress Bar - Brutalist Style */}
+        {/* Progress Bar */}
         <div className="space-y-2">
-          <div className="relative h-8 bg-primary/10 border-3 border-primary overflow-hidden">
+          <div className="relative h-6 bg-primary/10 border-2 border-primary overflow-hidden">
             <div
               className="absolute top-0 left-0 h-full bg-primary transition-all"
               style={{ width: `${progressPercent}%` }}
@@ -56,7 +62,7 @@ export const MusicPlayer = () => {
           </div>
           
           {/* Time Display */}
-          <div className="flex justify-between items-center border-2 border-primary/30 px-3 py-2 bg-card">
+          <div className="flex justify-between items-center border-2 border-primary/30 px-2 py-1 bg-card">
             <span className="font-mono font-bold text-xs text-foreground">
               {formatTime(currentTime)}
             </span>
@@ -67,20 +73,20 @@ export const MusicPlayer = () => {
           </div>
         </div>
 
-        {/* Play Button - Brutalist */}
+        {/* Play Button */}
         <button
           onClick={togglePlay}
-          className="w-full border-3 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-black py-4 px-4 text-sm tracking-widest transition-colors active:scale-95 active:translate-y-1"
+          className="w-full border-2 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-bold py-2 px-3 text-xs tracking-widest transition-colors active:scale-95"
         >
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-2">
             {isPlaying ? (
               <>
-                <Pause className="w-5 h-5" />
+                <Pause className="w-4 h-4" />
                 <span>PAUSAR</span>
               </>
             ) : (
               <>
-                <Play className="w-5 h-5" />
+                <Play className="w-4 h-4" />
                 <span>REPRODUZIR</span>
               </>
             )}
@@ -88,19 +94,12 @@ export const MusicPlayer = () => {
         </button>
 
         {/* Status Indicator */}
-        <div className="border-2 border-primary/50 px-3 py-2 flex items-center gap-2">
-          <div className={`w-3 h-3 ${isPlaying ? 'bg-accent' : 'bg-muted-foreground'}`}></div>
+        <div className="border-2 border-primary/50 px-2 py-1 flex items-center gap-2">
+          <div className={`w-2 h-2 ${isPlaying ? 'bg-accent' : 'bg-muted-foreground'}`}></div>
           <span className="font-mono text-xs font-bold text-foreground uppercase">
             {isPlaying ? 'TOCANDO' : 'PARADO'}
           </span>
         </div>
-      </div>
-
-      {/* Footer */}
-      <div className="border-t-4 border-primary bg-primary/5 px-4 py-2">
-        <p className="font-mono text-xs text-muted-foreground text-center">
-          ▌▌ INTERFACE BRUTALISTA
-        </p>
       </div>
     </div>
   );
