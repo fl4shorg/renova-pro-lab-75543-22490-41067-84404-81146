@@ -39,7 +39,7 @@ export const MusicPlayer = () => {
             />
           </div>
           <div className="flex-1 flex flex-col justify-center border-l-2 border-primary pl-2">
-            <p className="font-mono font-bold text-xs text-foreground leading-tight">Welcome Music</p>
+            <p className="font-mono font-bold text-xs text-foreground leading-tight">Do Job</p>
             <p className="font-mono text-xs text-muted-foreground mt-1">Relaxe enquanto explora</p>
           </div>
         </div>
