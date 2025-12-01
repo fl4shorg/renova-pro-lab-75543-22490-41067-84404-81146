@@ -34,9 +34,9 @@ export const SystemMonitor = () => {
   }, []);
 
   const maxValue = 100;
-  const chartWidth = 400;
-  const chartHeight = 150;
-  const padding = 10;
+  const chartWidth = 320;
+  const chartHeight = 120;
+  const padding = 8;
   const innerWidth = chartWidth - padding * 2;
   const innerHeight = chartHeight - padding * 2;
 
@@ -59,7 +59,7 @@ export const SystemMonitor = () => {
   const areaPath = areaPoints.join(' ');
 
   return (
-    <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in">
+    <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in overflow-hidden">
       {/* Header */}
       <div className="border-b-3 border-primary px-3 py-2 bg-gradient-to-r from-primary to-accent">
         <p className="font-mono font-black text-xs text-foreground tracking-widest">
@@ -68,7 +68,7 @@ export const SystemMonitor = () => {
       </div>
 
       {/* Graph */}
-      <div className="p-4 flex justify-center">
+      <div className="p-3 flex justify-center overflow-x-auto">
         <svg width={chartWidth} height={chartHeight} className="overflow-visible">
           {/* Grid background */}
           <defs>
