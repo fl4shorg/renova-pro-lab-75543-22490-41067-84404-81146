@@ -6,7 +6,7 @@ import { StatsDisplay } from '@/components/StatsDisplay';
 import { CategorySidebar } from '@/components/CategorySidebar';
 import { ApiEndpoint as ApiEndpointComponent } from '@/components/ApiEndpoint';
 import { WelcomeModal } from '@/components/WelcomeModal';
-import { MusicPlayer } from '@/components/MusicPlayer';
+import { FloatingMusicPlayer } from '@/components/FloatingMusicPlayer';
 import { servers, apiCategories, getTotalEndpoints, getTotalCategories } from '@/data/mockApi';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { ApiEndpoint } from '@/types/api';
@@ -53,6 +53,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-sans relative overflow-hidden">
       <WelcomeModal />
+      <FloatingMusicPlayer />
       <Navbar onMenuClick={handleMenuClick} />
       
       {/* Background decorative elements */}
@@ -89,9 +90,6 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col items-center mb-8 animate-fade-in gap-4">
-          {/* Music Player */}
-          <MusicPlayer />
-
           {/* Visitantes Card */}
           <div className="group relative overflow-hidden rounded-2xl backdrop-blur-xl glass-effect-strong border-2 border-purple-500/30 hover:border-cyan-400/50 transition-all duration-300 px-6 py-5 shadow-lg hover:shadow-purple-500/20 w-full max-w-md">
             {/* Glow effect */}

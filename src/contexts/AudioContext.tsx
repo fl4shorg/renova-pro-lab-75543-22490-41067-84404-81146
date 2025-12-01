@@ -64,7 +64,7 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
       <audio
         ref={audioRef}
         src="/assets/welcome-music.m4a"
-        preload="metadata"
+        preload="auto"
         loop
       />
       {children}

@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { getTotalEndpoints, getTotalCategories } from '@/data/mockApi';
+import { useAudio } from '@/contexts/AudioContext';
 
 export const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const { audioRef } = useAudio();
   const totalEndpoints = getTotalEndpoints();
   const totalCategories = getTotalCategories();
 
@@ -43,7 +44,6 @@ export const WelcomeModal = () => {
 
   return (
     <>
-      <audio ref={audioRef} src="/assets/welcome-music.m4a" preload="auto" loop />
       <Dialog open={isOpen} onOpenChange={handleOpenChange}>
         <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
         <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
