@@ -52,14 +52,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-sans relative overflow-hidden">
+    <div className="min-h-screen bg-background font-sans relative overflow-hidden" style={{backgroundImage: "url('/assets/background.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
       <WelcomeModal />
       <Navbar onMenuClick={handleMenuClick} />
       
+      {/* Background overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 gradient-primary opacity-10 blur-3xl rounded-full"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 gradient-secondary opacity-10 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 gradient-primary opacity-5 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 gradient-secondary opacity-5 blur-3xl rounded-full"></div>
       </div>
 
       <main className="relative max-w-6xl mx-auto px-4 sm:px-8 py-4 sm:py-8 mt-16">
