@@ -45,61 +45,69 @@ export const WelcomeModal = () => {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="sm:max-w-md glass-effect-strong border-2 border-primary/30 p-0 overflow-hidden shadow-2xl">
-        <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
-        <DialogDescription className="sr-only">Explore {totalEndpoints} endpoints organizados em {totalCategories} categorias. Teste, documente e integre!</DialogDescription>
-        <div className="absolute inset-0 gradient-primary opacity-5 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 gradient-primary opacity-20 blur-3xl rounded-full pointer-events-none"></div>
-        
-        <div className="relative flex flex-col items-center text-center p-8">
-          <div className="relative w-36 h-36 mb-6 flex items-center justify-center">
-            <div className="absolute inset-0 gradient-primary rounded-3xl blur-2xl opacity-70 animate-shimmer" 
-                 style={{ backgroundSize: '200% 100%' }}></div>
-            <div className="relative w-36 h-36 gradient-primary rounded-3xl p-5 shadow-glow hover:scale-105 transition-bounce">
-              <img 
-                src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
-                alt="Shinobu API Logo"
-                className="w-full h-full object-contain brightness-0 invert animate-pulse"
-                style={{ animationDuration: '3s' }}
-              />
+        <DialogContent className="sm:max-w-md p-0 overflow-hidden border-0 bg-transparent shadow-none">
+          <DialogTitle className="sr-only">Bem-vindo à Documentação da API Shinobu</DialogTitle>
+          <DialogDescription className="sr-only">Explore {totalEndpoints} endpoints organizados em {totalCategories} categorias. Teste, documente e integre!</DialogDescription>
+          
+          <div className="border-4 border-primary bg-card">
+            <div className="border-b-4 border-primary px-4 py-3 bg-gradient-to-r from-primary to-accent">
+              <p className="font-mono font-black text-sm text-foreground tracking-widest text-center">
+                BEM-VINDO
+              </p>
+            </div>
+
+            <div className="p-6 space-y-5">
+              <div className="flex justify-center">
+                <div className="w-28 h-28 border-4 border-primary bg-gradient-to-br from-primary to-accent p-4 flex items-center justify-center">
+                  <img 
+                    src="https://i.ibb.co/XfThMhM9/vista-superior-do-inseto-em-forma-de-borboleta-preta.png" 
+                    alt="Shinobu API Logo"
+                    className="w-full h-full object-contain brightness-0 invert"
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="border-2 border-primary px-3 py-1 bg-primary/10 flex items-center gap-2">
+                  <div className="w-2 h-2 bg-accent"></div>
+                  <span className="font-mono font-black text-xs text-foreground tracking-widest">V5.0</span>
+                </div>
+              </div>
+
+              <div className="border-l-4 border-primary pl-3 py-2">
+                <h2 className="font-mono font-black text-xl text-foreground tracking-wide">
+                  Documentação Pronta!
+                </h2>
+              </div>
+
+              <div className="border-2 border-primary/50 p-3 bg-primary/5 space-y-2">
+                <p className="font-mono text-sm text-foreground leading-relaxed">
+                  Explore <span className="text-primary font-bold">{totalEndpoints} endpoints</span> organizados em <span className="text-accent font-bold">{totalCategories} categorias</span>.
+                </p>
+                <p className="font-mono text-sm text-muted-foreground">
+                  Teste, documente e integre!
+                </p>
+              </div>
+
+              <button
+                onClick={handleEnter}
+                className="w-full border-4 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-black py-3 px-4 text-sm tracking-widest transition-colors active:scale-95 flex items-center justify-center gap-2"
+              >
+                <span>ENTRAR</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+
+              <div className="border-t-2 border-primary/30 pt-3">
+                <p className="font-mono text-xs text-muted-foreground text-center tracking-wide">
+                  {getCurrentDate()}
+                </p>
+              </div>
             </div>
           </div>
-
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-effect border border-primary/30 text-[10px] font-black mb-4 uppercase tracking-widest shadow-elegant">
-            <div className="w-1.5 h-1.5 rounded-full gradient-primary shadow-glow animate-pulse"></div>
-            <span className="text-gradient">v5.0</span>
-          </div>
-
-          <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Documentação Pronta! 🚀
-          </h2>
-
-          <p className="text-sm text-muted-foreground mb-6 max-w-sm leading-relaxed">
-            Explore <span className="text-primary font-bold">{totalEndpoints} endpoints</span> organizados em <span className="text-primary font-bold">{totalCategories} categorias</span>. Teste, documente e integre!
-          </p>
-
-          <button
-            onClick={handleEnter}
-            className="group relative px-10 py-3.5 rounded-xl overflow-hidden font-bold shadow-elegant hover:shadow-glow transition-smooth hover:scale-105 mb-5"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 group-hover:from-red-700 group-hover:to-red-600"></div>
-            <span className="relative text-white z-10 flex items-center gap-2">
-              Entrar 
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-          </button>
-
-          <div className="w-full pt-4 border-t border-border/30">
-            <p className="text-xs text-muted-foreground/70 font-mono">
-              {getCurrentDate()}
-            </p>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
