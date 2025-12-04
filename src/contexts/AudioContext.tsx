@@ -19,7 +19,7 @@ const tracks: Track[] = [
   {
     id: 2,
     name: "MALANDRA MENTE",
-    artist: "Nós se ver por aí",
+    artist: "Relaxe enquanto explora",
     src: "/assets/malandra-mente.mp3",
     cover: "https://i.ytimg.com/vi/pO0q-1JJ77E/hqdefault.jpg"
   }
