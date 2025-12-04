@@ -6,12 +6,13 @@ This is a React-based API documentation platform built with Vite, TypeScript, an
 **Current State**: Production-ready. The application is fully functional and running on Replit.
 
 ## Recent Changes
-- **2025-12-04**: Added CategoryModal for improved endpoint browsing experience
-  - Created new CategoryModal component with breadcrumb navigation
-  - Added search functionality to filter endpoints within a category
+- **2025-12-04**: Added dedicated category page for browsing endpoints
+  - Created new CategoryPage route (/category/:slug) for full-page category view
+  - Breadcrumb navigation (Home / Category / CategoryName) for easy navigation
+  - Search bar to filter endpoints within a category
   - Endpoints displayed in accordion style with method, alias, path, description, and parameters
-  - Updated CategorySidebar to open modal on category click instead of inline expansion
-  - Improved organization and usability for testing API endpoints
+  - Inline endpoint testing on the category page
+  - CategorySidebar now navigates to category page instead of inline expansion
 - **2025-10-13**: Completed migration from Supabase to production-ready Replit environment
   - Migrated Supabase Edge Functions to Express proxy server
   - Created production-ready server.js with API proxy routes
