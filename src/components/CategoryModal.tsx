@@ -1,11 +1,13 @@
-import { useState, useMemo } from 'react';
-import { Search, Home, ChevronRight, ChevronDown } from 'lucide-react';
+import { useState, useMemo, useEffect } from 'react';
+import { Search, Home, ChevronRight } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
+  DialogTitle,
+  DialogDescription,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import {
@@ -25,6 +27,12 @@ interface CategoryModalProps {
 
 export const CategoryModal = ({ category, isOpen, onClose, onEndpointClick }: CategoryModalProps) => {
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      setSearchQuery('');
+    }
+  }, [isOpen, category]);
 
   const filteredEndpoints = useMemo(() => {
     if (!category) return [];
@@ -47,8 +55,13 @@ export const CategoryModal = ({ category, isOpen, onClose, onEndpointClick }: Ca
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[85vh] p-0 gap-0 glass-effect-strong border-border/50 overflow-hidden">
+      <DialogContent className="max-w-2xl max-h-[85vh] p-0 gap-0 glass-effect-strong border-border/50 overflow-hidden z-[100]">
         <DialogHeader className="p-4 sm:p-6 pb-0 space-y-4">
+          <DialogTitle className="sr-only">{category.name} - Endpoints</DialogTitle>
+          <DialogDescription className="sr-only">
+            Lista de endpoints da categoria {category.name}
+          </DialogDescription>
+          
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Home className="w-4 h-4" />
             <span className="hover:text-foreground cursor-pointer transition-colors">Home</span>
