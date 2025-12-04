@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
+import { CategoryModal } from './CategoryModal';
 
 const getCategoryIcon = (categoryName: string) => {
   const iconMap: Record<string, any> = {
@@ -46,8 +47,9 @@ interface CategorySidebarProps {
 }
 
 export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, onClose }: CategorySidebarProps) => {
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [selectedCategory, setSelectedCategory] = useState<ApiCategory | null>(null);
+  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -77,18 +79,19 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
 
   const { date, time } = getBrasiliaTime();
 
-  const toggleCategory = (categoryName: string) => {
-    const newExpanded = new Set(expandedCategories);
-    if (newExpanded.has(categoryName)) {
-      newExpanded.delete(categoryName);
-    } else {
-      newExpanded.add(categoryName);
-    }
-    setExpandedCategories(newExpanded);
+  const openCategoryModal = (category: ApiCategory) => {
+    setSelectedCategory(category);
+    setIsCategoryModalOpen(true);
   };
 
-  const handleRouteClick = (endpoint: ApiEndpoint) => {
+  const closeCategoryModal = () => {
+    setIsCategoryModalOpen(false);
+    setSelectedCategory(null);
+  };
+
+  const handleEndpointClick = (endpoint: ApiEndpoint) => {
     onRouteClick(endpoint);
+    closeCategoryModal();
     onClose();
   };
 
@@ -132,7 +135,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
             {categories.map((category) => (
               <div key={category.name} className="mb-1">
                 <button
-                  onClick={() => toggleCategory(category.name)}
+                  onClick={() => openCategoryModal(category)}
                   className="w-full group/item p-3 rounded-lg text-left transition-all duration-200 hover:glass-effect"
                 >
                   <div className="flex items-center justify-between">
@@ -141,49 +144,18 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
                         const IconComponent = getCategoryIcon(category.name);
                         return <IconComponent className="w-4 h-4 text-primary/70 group-hover/item:text-primary transition-colors" />;
                       })()}
-                      <ChevronDown className={cn(
-                        "w-3.5 h-3.5 transition-transform text-muted-foreground",
-                        expandedCategories.has(category.name) ? "rotate-0" : "-rotate-90"
-                      )} />
                       <p className="font-bold text-sm text-foreground group-hover/item:text-primary transition-colors">
                         {category.name}
                       </p>
                     </div>
-                    <span className="text-[10px] px-2.5 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 font-mono font-bold border border-cyan-500/30 shadow-sm">
-                      {category.endpoints.length}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 font-mono font-bold border border-cyan-500/30 shadow-sm">
+                        {category.endpoints.length}
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-muted-foreground group-hover/item:text-primary transition-colors" />
+                    </div>
                   </div>
                 </button>
-                
-                {expandedCategories.has(category.name) && (
-                  <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-border/30 pl-2">
-                    {category.endpoints.map((endpoint) => (
-                      <button
-                        key={endpoint.id}
-                        onClick={() => handleRouteClick(endpoint)}
-                        className="w-full text-left p-2 rounded-md hover:bg-accent/50 transition-colors group/route"
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className={cn(
-                            "text-[10px] px-1.5 py-0.5 rounded font-mono font-bold",
-                            endpoint.method === 'GET' ? "bg-green-500/20 text-green-600 dark:text-green-400" :
-                            endpoint.method === 'POST' ? "bg-blue-500/20 text-blue-600 dark:text-blue-400" :
-                            "bg-yellow-500/20 text-yellow-600 dark:text-yellow-400"
-                          )}>
-                            {endpoint.method}
-                          </span>
-                          <span className="text-xs text-foreground group-hover/route:text-primary transition-colors truncate flex-1">
-                            {endpoint.alias}
-                          </span>
-                          <ChevronRight className="w-3 h-3 text-muted-foreground opacity-0 group-hover/route:opacity-100 transition-opacity flex-shrink-0" />
-                        </div>
-                        <p className="text-[10px] text-muted-foreground font-mono mt-0.5 ml-12 truncate">
-                          {endpoint.path}
-                        </p>
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -196,6 +168,13 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
           onClick={onClose}
         />
       )}
+
+      <CategoryModal
+        category={selectedCategory}
+        isOpen={isCategoryModalOpen}
+        onClose={closeCategoryModal}
+        onEndpointClick={handleEndpointClick}
+      />
     </>
   );
 };
