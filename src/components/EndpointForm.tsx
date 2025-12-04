@@ -109,7 +109,7 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
           disabled={!hasResponse}
           className="bg-card border border-border hover:border-primary font-semibold text-foreground px-6 py-3 rounded-lg text-sm transition-colors font-sans disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Clear
+          Limpar
         </button>
       </div>
     </form>
