@@ -147,10 +147,10 @@ const CategoryPage = () => {
                     </code>
                   </div>
                   <span className={cn(
-                    "text-xs px-2.5 py-1 rounded font-mono font-bold shrink-0",
-                    endpoint.method === 'GET' ? "bg-green-500/20 text-green-500" :
-                    endpoint.method === 'POST' ? "bg-blue-500/20 text-blue-500" :
-                    "bg-yellow-500/20 text-yellow-500"
+                    "text-xs px-4 py-1.5 rounded-full font-bold shrink-0 text-white",
+                    endpoint.method === 'GET' ? "bg-gradient-to-r from-cyan-500 to-purple-500" :
+                    endpoint.method === 'POST' ? "bg-gradient-to-r from-blue-500 to-indigo-500" :
+                    "bg-gradient-to-r from-yellow-500 to-orange-500"
                   )}>
                     {endpoint.method}
                   </span>
