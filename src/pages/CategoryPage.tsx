@@ -167,6 +167,7 @@ const CategoryPage = () => {
                     <ApiEndpointComponent 
                       endpoint={endpoint}
                       serverUrl={selectedServer}
+                      inline={true}
                     />
                   </div>
                 )}

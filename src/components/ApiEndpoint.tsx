@@ -8,10 +8,11 @@ import { useApiHealth } from '@/hooks/useApiHealth';
 interface ApiEndpointProps {
   endpoint: ApiEndpointType;
   serverUrl: string;
+  inline?: boolean;
 }
 
-const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ApiEndpointComponent = ({ endpoint, serverUrl, inline = false }: ApiEndpointProps) => {
+  const [isOpen, setIsOpen] = useState(inline);
   const [response, setResponse] = useState<string | null>(null);
   const [requestInfo, setRequestInfo] = useState<{method: string; url: string; status: number; contentType?: string} | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -120,6 +121,43 @@ const ApiEndpointComponent = ({ endpoint, serverUrl }: ApiEndpointProps) => {
     if (healthStatus === 'offline') return 'Offline';
     return 'Verificando...';
   };
+
+  if (inline) {
+    return (
+      <div className="animate-fade-in">
+        <div className="mb-4">
+          <EndpointForm
+            endpoint={endpoint}
+            onSubmit={handleSubmit}
+            onClear={handleClear}
+            isLoading={isLoading}
+            hasResponse={!!response}
+          />
+        </div>
+
+        {response && (
+          <div className="animate-scale-in">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-lg gradient-secondary shadow-elegant">
+                <Code className="w-4 h-4 text-primary-foreground" />
+              </div>
+              <h3 className="text-foreground font-black text-sm font-sans uppercase tracking-wider">
+                Resposta
+              </h3>
+            </div>
+            <ResponseViewer 
+              key={responseKey}
+              response={response} 
+              method={requestInfo?.method}
+              url={requestInfo?.url}
+              status={requestInfo?.status}
+              contentType={requestInfo?.contentType}
+            />
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="border-t border-border/50 backdrop-blur-sm hover:bg-accent/5 transition-smooth group/endpoint">

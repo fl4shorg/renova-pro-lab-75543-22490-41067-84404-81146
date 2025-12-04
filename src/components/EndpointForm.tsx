@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ApiEndpoint } from '@/types/api';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Play } from 'lucide-react';
 
 interface EndpointFormProps {
   endpoint: ApiEndpoint;
@@ -55,7 +55,7 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
                   value={formData[param.name] || param.defaultValue || ''}
                   onChange={(e) => handleChange(param.name, e.target.value)}
                   required={param.required}
-                  className="w-full px-3 py-2 border border-border text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono transition-colors"
+                  className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono transition-colors"
                 >
                   {param.options?.map((option) => (
                     <option key={option} value={option}>
@@ -71,7 +71,7 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
                   placeholder={param.placeholder}
                   required={param.required}
                   rows={3}
-                  className="w-full px-3 py-2 border border-border text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono resize-none transition-colors"
+                  className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono resize-none transition-colors"
                 />
               ) : (
                 <input
@@ -81,7 +81,7 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
                   onChange={(e) => handleChange(param.name, e.target.value)}
                   placeholder={param.placeholder}
                   required={param.required}
-                  className="w-full px-3 py-2 border border-border text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono transition-colors"
+                  className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:border-primary bg-card placeholder:text-muted-foreground font-mono transition-colors"
                 />
               )}
             </div>
@@ -93,21 +93,24 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
         <button
           type="submit"
           disabled={isLoading}
-          className="bg-primary hover:bg-primary/90 font-semibold text-primary-foreground px-6 py-2 text-xs transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-sans"
+          className="flex-1 bg-primary hover:bg-primary/90 font-semibold text-primary-foreground px-6 py-3 rounded-lg text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-sans"
         >
-          {isLoading && <Loader2 className="w-3 h-3 animate-spin" />}
-          Execute
+          {isLoading ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            <Play className="w-4 h-4" />
+          )}
+          Send Request
         </button>
         
-        {hasResponse && (
-          <button
-            type="button"
-            onClick={onClear}
-            className="bg-card border border-border hover:border-primary font-semibold text-foreground px-6 py-2 text-xs transition-colors font-sans"
-          >
-            Clear
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={onClear}
+          disabled={!hasResponse}
+          className="bg-card border border-border hover:border-primary font-semibold text-foreground px-6 py-3 rounded-lg text-sm transition-colors font-sans disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Clear
+        </button>
       </div>
     </form>
   );
