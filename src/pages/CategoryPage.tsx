@@ -127,43 +127,29 @@ const CategoryPage = () => {
             <p className="text-sm mt-1">Tente uma busca diferente</p>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="bg-card border border-border/50 rounded-xl overflow-hidden divide-y divide-border/50">
             {filteredEndpoints.map((endpoint) => (
-              <div 
-                key={endpoint.id}
-                className="bg-card border border-border/50 rounded-xl overflow-hidden"
-              >
+              <div key={endpoint.id}>
                 <button
                   onClick={() => toggleEndpoint(endpoint.id)}
-                  className="w-full px-5 py-4 flex items-center justify-between hover:bg-accent/30 transition-colors"
+                  className="w-full px-5 py-4 flex items-center gap-3 hover:bg-accent/20 transition-colors"
                 >
-                  <div className="flex items-center gap-3 text-left">
-                    <ChevronDown className={cn(
-                      "w-5 h-5 text-muted-foreground transition-transform",
-                      expandedEndpoints.has(endpoint.id) ? "rotate-0" : "-rotate-90"
-                    )} />
-                    <span className="font-semibold text-foreground">
+                  <ChevronDown className={cn(
+                    "w-5 h-5 text-muted-foreground transition-transform shrink-0",
+                    expandedEndpoints.has(endpoint.id) ? "rotate-0" : "-rotate-90"
+                  )} />
+                  <div className="flex-1 text-left">
+                    <span className="font-semibold text-foreground block">
                       {endpoint.alias}
                     </span>
+                    <code className="text-sm text-muted-foreground font-mono">
+                      {endpoint.path}
+                    </code>
                   </div>
-                  <span className={cn(
-                    "text-xs px-2.5 py-1 rounded font-mono font-bold shrink-0",
-                    endpoint.method === 'GET' ? "bg-green-500/20 text-green-500" :
-                    endpoint.method === 'POST' ? "bg-blue-500/20 text-blue-500" :
-                    "bg-yellow-500/20 text-yellow-500"
-                  )}>
-                    {endpoint.method}
-                  </span>
                 </button>
-                
-                <div className="px-5 pb-2 -mt-1">
-                  <code className="text-sm text-muted-foreground font-mono">
-                    {endpoint.path}
-                  </code>
-                </div>
 
                 {expandedEndpoints.has(endpoint.id) && (
-                  <div className="px-5 pb-5 pt-2 border-t border-border/30 mt-2 animate-fade-in">
+                  <div className="px-5 pb-5 pt-2 border-t border-border/30 animate-fade-in">
                     <ApiEndpointComponent 
                       endpoint={endpoint}
                       serverUrl={selectedServer}
