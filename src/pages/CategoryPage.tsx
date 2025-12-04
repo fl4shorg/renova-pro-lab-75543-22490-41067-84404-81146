@@ -112,7 +112,7 @@ const CategoryPage = () => {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search endpoints..."
+              placeholder="Buscar endpoints..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-12 py-6 text-base bg-background border-border/50 rounded-xl"
