@@ -22,6 +22,13 @@ const tracks: Track[] = [
     artist: "Relaxe enquanto explora",
     src: "/assets/malandra-mente.mp3",
     cover: "https://i.ytimg.com/vi/pO0q-1JJ77E/hqdefault.jpg"
+  },
+  {
+    id: 3,
+    name: "MC POZE NOS ANOS 80",
+    artist: "Relaxe enquanto explora",
+    src: "/assets/mc-poze-anos-80.mp3",
+    cover: "https://i.ytimg.com/vi/WZIGwN-5Ioo/hqdefault.jpg"
   }
 ];
 
