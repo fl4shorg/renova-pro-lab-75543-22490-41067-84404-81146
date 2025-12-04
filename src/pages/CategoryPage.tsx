@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Search, Home, ChevronRight, ChevronDown, Menu } from 'lucide-react';
 import { apiCategories, servers } from '@/data/mockApi';
@@ -13,10 +13,9 @@ const CategoryPage = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedEndpoints, setExpandedEndpoints] = useState<Set<string>>(new Set());
-  const [selectedEndpoint, setSelectedEndpoint] = useState<ApiEndpoint | null>(null);
+  const [testingEndpoints, setTestingEndpoints] = useState<Set<string>>(new Set());
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedServer] = useState(servers[0].url);
-  const endpointRef = useRef<HTMLDivElement>(null);
 
   const category = useMemo(() => {
     if (!slug) return null;
@@ -49,11 +48,14 @@ const CategoryPage = () => {
     setExpandedEndpoints(newExpanded);
   };
 
-  const handleTestEndpoint = (endpoint: ApiEndpoint) => {
-    setSelectedEndpoint(endpoint);
-    setTimeout(() => {
-      endpointRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
+  const handleTestEndpoint = (endpointId: string) => {
+    const newTesting = new Set(testingEndpoints);
+    if (newTesting.has(endpointId)) {
+      newTesting.delete(endpointId);
+    } else {
+      newTesting.add(endpointId);
+    }
+    setTestingEndpoints(newTesting);
   };
 
   const handleRouteClick = (endpoint: ApiEndpoint) => {
@@ -210,27 +212,25 @@ const CategoryPage = () => {
                     )}
 
                     <button
-                      onClick={() => handleTestEndpoint(endpoint)}
+                      onClick={() => handleTestEndpoint(endpoint.id)}
                       className="w-full px-4 py-3 rounded-lg gradient-primary text-white font-semibold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                     >
-                      Testar Endpoint
-                      <ChevronRight className="w-4 h-4" />
+                      {testingEndpoints.has(endpoint.id) ? 'Fechar Teste' : 'Testar Endpoint'}
+                      <ChevronRight className={cn("w-4 h-4 transition-transform", testingEndpoints.has(endpoint.id) && "rotate-90")} />
                     </button>
+
+                    {testingEndpoints.has(endpoint.id) && (
+                      <div className="mt-4 animate-fade-in">
+                        <ApiEndpointComponent 
+                          endpoint={endpoint}
+                          serverUrl={selectedServer}
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             ))}
-          </div>
-        )}
-
-        {selectedEndpoint && (
-          <div ref={endpointRef} className="mt-8 animate-fade-in">
-            <div className="glass-effect-strong rounded-2xl p-6 shadow-card">
-              <ApiEndpointComponent 
-                endpoint={selectedEndpoint}
-                serverUrl={selectedServer}
-              />
-            </div>
           </div>
         )}
 
