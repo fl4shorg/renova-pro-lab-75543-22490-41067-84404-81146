@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
-  ChevronRight, ChevronDown, Download, Search, MessageSquare, Image, Sticker, 
+  ChevronRight, Download, Search, MessageSquare, Image, Sticker, 
   Newspaper, Sparkles, UserSearch, Wand2, Heart, Shuffle, Video, Clapperboard, 
   Calendar, Brain, Palette, FileQuestion, Flame, Film, Signature, Shield, 
   Wrench, AppWindow, Play
 } from 'lucide-react';
 import { ApiCategory, ApiEndpoint } from '@/types/api';
 import { cn } from '@/lib/utils';
-import { CategoryModal } from './CategoryModal';
 
 const getCategoryIcon = (categoryName: string) => {
   const iconMap: Record<string, any> = {
@@ -47,9 +47,8 @@ interface CategorySidebarProps {
 }
 
 export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, onClose }: CategorySidebarProps) => {
+  const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [selectedCategory, setSelectedCategory] = useState<ApiCategory | null>(null);
-  const [isCategoryModalOpen, setIsCategoryModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,19 +78,9 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
 
   const { date, time } = getBrasiliaTime();
 
-  const openCategoryModal = (category: ApiCategory) => {
-    setSelectedCategory(category);
-    setIsCategoryModalOpen(true);
-  };
-
-  const closeCategoryModal = () => {
-    setIsCategoryModalOpen(false);
-    setSelectedCategory(null);
-  };
-
-  const handleEndpointClick = (endpoint: ApiEndpoint) => {
-    onRouteClick(endpoint);
-    closeCategoryModal();
+  const handleCategoryClick = (category: ApiCategory) => {
+    const slug = category.name.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/category/${encodeURIComponent(slug)}`);
     onClose();
   };
 
@@ -135,7 +124,7 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
             {categories.map((category) => (
               <div key={category.name} className="mb-1">
                 <button
-                  onClick={() => openCategoryModal(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className="w-full group/item p-3 rounded-lg text-left transition-all duration-200 hover:glass-effect"
                 >
                   <div className="flex items-center justify-between">
@@ -168,13 +157,6 @@ export const CategorySidebar = ({ categories, onRouteClick, serverUrl, isOpen, o
           onClick={onClose}
         />
       )}
-
-      <CategoryModal
-        category={selectedCategory}
-        isOpen={isCategoryModalOpen}
-        onClose={closeCategoryModal}
-        onEndpointClick={handleEndpointClick}
-      />
     </>
   );
 };
