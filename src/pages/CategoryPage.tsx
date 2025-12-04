@@ -13,7 +13,6 @@ const CategoryPage = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedEndpoints, setExpandedEndpoints] = useState<Set<string>>(new Set());
-  const [testingEndpoints, setTestingEndpoints] = useState<Set<string>>(new Set());
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedServer] = useState(servers[0].url);
 
@@ -46,16 +45,6 @@ const CategoryPage = () => {
       newExpanded.add(endpointId);
     }
     setExpandedEndpoints(newExpanded);
-  };
-
-  const handleTestEndpoint = (endpointId: string) => {
-    const newTesting = new Set(testingEndpoints);
-    if (newTesting.has(endpointId)) {
-      newTesting.delete(endpointId);
-    } else {
-      newTesting.add(endpointId);
-    }
-    setTestingEndpoints(newTesting);
   };
 
   const handleRouteClick = (endpoint: ApiEndpoint) => {
@@ -174,59 +163,11 @@ const CategoryPage = () => {
                 </div>
 
                 {expandedEndpoints.has(endpoint.id) && (
-                  <div className="px-5 pb-5 pt-2 border-t border-border/30 mt-2">
-                    {endpoint.description && (
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {endpoint.description}
-                      </p>
-                    )}
-
-                    {endpoint.parameters && endpoint.parameters.length > 0 && (
-                      <div className="mb-4">
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                          Parâmetros
-                        </p>
-                        <div className="space-y-2">
-                          {endpoint.parameters.map((param) => (
-                            <div 
-                              key={param.name}
-                              className="flex items-center gap-2 text-sm"
-                            >
-                              <code className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-mono">
-                                {param.name}
-                              </code>
-                              {param.required && (
-                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 font-bold">
-                                  obrigatório
-                                </span>
-                              )}
-                              {param.description && (
-                                <span className="text-muted-foreground text-xs">
-                                  {param.description}
-                                </span>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <button
-                      onClick={() => handleTestEndpoint(endpoint.id)}
-                      className="w-full px-4 py-3 rounded-lg gradient-primary text-white font-semibold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-                    >
-                      {testingEndpoints.has(endpoint.id) ? 'Fechar Teste' : 'Testar Endpoint'}
-                      <ChevronRight className={cn("w-4 h-4 transition-transform", testingEndpoints.has(endpoint.id) && "rotate-90")} />
-                    </button>
-
-                    {testingEndpoints.has(endpoint.id) && (
-                      <div className="mt-4 animate-fade-in">
-                        <ApiEndpointComponent 
-                          endpoint={endpoint}
-                          serverUrl={selectedServer}
-                        />
-                      </div>
-                    )}
+                  <div className="px-5 pb-5 pt-2 border-t border-border/30 mt-2 animate-fade-in">
+                    <ApiEndpointComponent 
+                      endpoint={endpoint}
+                      serverUrl={selectedServer}
+                    />
                   </div>
                 )}
               </div>
