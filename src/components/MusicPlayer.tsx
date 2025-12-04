@@ -1,8 +1,18 @@
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 import { useAudio } from '@/contexts/AudioContext';
 
 export const MusicPlayer = () => {
-  const { isPlaying, duration, currentTime, togglePlay, seek } = useAudio();
+  const { 
+    isPlaying, 
+    duration, 
+    currentTime, 
+    currentTrack,
+    tracks,
+    togglePlay, 
+    seek,
+    nextTrack,
+    previousTrack 
+  } = useAudio();
 
   const formatTime = (time: number) => {
     if (!time || isNaN(time)) return '0:00';
@@ -17,34 +27,40 @@ export const MusicPlayer = () => {
   };
 
   const progressPercent = duration ? (currentTime / duration) * 100 : 0;
+  const currentIndex = tracks.findIndex(t => t.id === currentTrack.id) + 1;
 
   return (
     <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in">
-      {/* Header */}
       <div className="border-b-3 border-primary px-3 py-2 bg-gradient-to-r from-primary to-accent">
-        <p className="font-mono font-black text-xs text-foreground tracking-widest">
-          MÚSICA AMBIENTE
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="font-mono font-black text-xs text-foreground tracking-widest">
+            MÚSICA AMBIENTE
+          </p>
+          <span className="font-mono text-xs text-foreground/80">
+            {currentIndex}/{tracks.length}
+          </span>
+        </div>
       </div>
 
-      {/* Content */}
       <div className="p-3 space-y-3">
-        {/* Album Art + Info */}
         <div className="flex gap-3">
           <div className="w-16 h-16 border-2 border-primary bg-primary/10 flex-shrink-0 overflow-hidden">
             <img
-              src="https://i.ytimg.com/vi/JZ_8RmkzcKw/hq720.jpg"
-              alt="Album"
+              src={currentTrack.cover}
+              alt={currentTrack.name}
               className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1 flex flex-col justify-center border-l-2 border-primary pl-2">
-            <p className="font-mono font-bold text-xs text-foreground leading-tight">Do Job</p>
-            <p className="font-mono text-xs text-muted-foreground mt-1">Relaxe enquanto explora</p>
+            <p className="font-mono font-bold text-xs text-foreground leading-tight truncate">
+              {currentTrack.name}
+            </p>
+            <p className="font-mono text-xs text-muted-foreground mt-1 truncate">
+              {currentTrack.artist}
+            </p>
           </div>
         </div>
 
-        {/* Progress Bar */}
         <div className="space-y-2">
           <div className="relative h-6 bg-primary/10 border-2 border-primary overflow-hidden">
             <div
@@ -61,7 +77,6 @@ export const MusicPlayer = () => {
             />
           </div>
           
-          {/* Time Display */}
           <div className="flex justify-between items-center border-2 border-primary/30 px-2 py-1 bg-card">
             <span className="font-mono font-bold text-xs text-foreground">
               {formatTime(currentTime)}
@@ -73,27 +88,45 @@ export const MusicPlayer = () => {
           </div>
         </div>
 
-        {/* Play Button */}
-        <button
-          onClick={togglePlay}
-          className="w-full border-2 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-bold py-2 px-3 text-xs tracking-widest transition-colors active:scale-95"
-        >
-          <div className="flex items-center justify-center gap-2">
-            {isPlaying ? (
-              <>
-                <Pause className="w-4 h-4" />
-                <span>PAUSAR</span>
-              </>
-            ) : (
-              <>
-                <Play className="w-4 h-4" />
-                <span>REPRODUZIR</span>
-              </>
-            )}
-          </div>
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={previousTrack}
+            className="flex-1 border-2 border-primary bg-card hover:bg-primary/10 text-foreground font-mono font-bold py-2 px-2 text-xs tracking-widest transition-colors active:scale-95"
+          >
+            <div className="flex items-center justify-center">
+              <SkipBack className="w-4 h-4" />
+            </div>
+          </button>
+          
+          <button
+            onClick={togglePlay}
+            className="flex-[2] border-2 border-primary bg-primary hover:bg-primary/90 text-primary-foreground font-mono font-bold py-2 px-3 text-xs tracking-widest transition-colors active:scale-95"
+          >
+            <div className="flex items-center justify-center gap-2">
+              {isPlaying ? (
+                <>
+                  <Pause className="w-4 h-4" />
+                  <span>PAUSAR</span>
+                </>
+              ) : (
+                <>
+                  <Play className="w-4 h-4" />
+                  <span>PLAY</span>
+                </>
+              )}
+            </div>
+          </button>
+          
+          <button
+            onClick={nextTrack}
+            className="flex-1 border-2 border-primary bg-card hover:bg-primary/10 text-foreground font-mono font-bold py-2 px-2 text-xs tracking-widest transition-colors active:scale-95"
+          >
+            <div className="flex items-center justify-center">
+              <SkipForward className="w-4 h-4" />
+            </div>
+          </button>
+        </div>
 
-        {/* Status Indicator */}
         <div className="border-2 border-primary/50 px-2 py-1 flex items-center gap-2">
           <div className={`w-2 h-2 ${isPlaying ? 'bg-accent' : 'bg-muted-foreground'}`}></div>
           <span className="font-mono text-xs font-bold text-foreground uppercase">
