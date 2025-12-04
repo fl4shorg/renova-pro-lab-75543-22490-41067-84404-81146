@@ -49,12 +49,12 @@ export const SystemMonitor = () => {
     };
   }, []);
 
-  const width = 400;
-  const height = 280;
-  const paddingLeft = 50;
-  const paddingRight = 20;
-  const paddingTop = 20;
-  const paddingBottom = 40;
+  const width = 320;
+  const height = 220;
+  const paddingLeft = 40;
+  const paddingRight = 15;
+  const paddingTop = 15;
+  const paddingBottom = 35;
   const graphWidth = width - paddingLeft - paddingRight;
   const graphHeight = height - paddingTop - paddingBottom;
 
@@ -88,30 +88,35 @@ export const SystemMonitor = () => {
   };
 
   return (
-    <div className="w-full max-w-md rounded-2xl overflow-hidden" style={{ backgroundColor: '#5C2A4A' }}>
-      <div className="p-6">
-        <h2 className="text-white text-xl font-bold mb-1">Processamento do servidor</h2>
-        <p className="text-white/70 text-sm mb-6">Frequência de solicitações da api</p>
-        
+    <div className="w-full max-w-sm border-3 border-primary bg-card animate-fade-in">
+      <div className="border-b-3 border-primary px-3 py-2 bg-gradient-to-r from-primary to-accent">
+        <p className="font-mono font-black text-xs text-foreground tracking-widest">
+          PROCESSAMENTO DO SERVIDOR
+        </p>
+      </div>
+      
+      <div className="px-3 py-2 border-b-2 border-primary/30">
+        <p className="font-mono text-xs text-muted-foreground">
+          Frequência de solicitações da api
+        </p>
+      </div>
+
+      <div className="p-3">
         <svg 
           width="100%" 
           height={height} 
           viewBox={`0 0 ${width} ${height}`}
           className="overflow-visible"
-          style={{ transition: 'all 0.1s ease-out' }}
         >
           <defs>
-            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.4)" />
-              <stop offset="100%" stopColor="rgba(255, 255, 255, 0.05)" />
+            <linearGradient id="areaGradientBrutalist" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" className="[stop-color:hsl(var(--primary))]" stopOpacity="0.4" />
+              <stop offset="100%" className="[stop-color:hsl(var(--primary))]" stopOpacity="0.05" />
             </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
+            <linearGradient id="lineGradientBrutalist" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" className="[stop-color:hsl(var(--primary))]" />
+              <stop offset="100%" className="[stop-color:hsl(var(--accent))]" />
+            </linearGradient>
           </defs>
 
           {yTicks.map((tick) => {
@@ -123,16 +128,15 @@ export const SystemMonitor = () => {
                   y1={y}
                   x2={paddingLeft + graphWidth}
                   y2={y}
-                  stroke="rgba(255, 255, 255, 0.1)"
+                  className="stroke-primary/15"
                   strokeWidth="1"
                 />
                 <text
-                  x={paddingLeft - 10}
+                  x={paddingLeft - 8}
                   y={y + 4}
-                  fill="rgba(255, 255, 255, 0.7)"
-                  fontSize="12"
+                  className="fill-muted-foreground font-mono"
+                  fontSize="10"
                   textAnchor="end"
-                  fontFamily="monospace"
                 >
                   {tick}
                 </text>
@@ -149,16 +153,15 @@ export const SystemMonitor = () => {
                   y1={paddingTop}
                   x2={x}
                   y2={paddingTop + graphHeight}
-                  stroke="rgba(255, 255, 255, 0.1)"
+                  className="stroke-primary/15"
                   strokeWidth="1"
                 />
                 <text
                   x={x}
-                  y={paddingTop + graphHeight + 25}
-                  fill="rgba(255, 255, 255, 0.7)"
-                  fontSize="12"
+                  y={paddingTop + graphHeight + 18}
+                  className="fill-muted-foreground font-mono"
+                  fontSize="10"
                   textAnchor="middle"
-                  fontFamily="monospace"
                 >
                   {tick}
                 </text>
@@ -168,20 +171,33 @@ export const SystemMonitor = () => {
 
           <path
             d={createAreaPath()}
-            fill="url(#areaGradient)"
-            style={{ transition: 'all 0.1s ease-out' }}
+            fill="url(#areaGradientBrutalist)"
           />
 
           <path
             d={createPath()}
             fill="none"
-            stroke="rgba(255, 255, 255, 0.9)"
-            strokeWidth="2"
+            stroke="url(#lineGradientBrutalist)"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            filter="url(#glow)"
-            style={{ transition: 'all 0.1s ease-out' }}
           />
+
+          {data.filter((_, i) => i % 5 === 0).map((point, index) => {
+            const actualIndex = index * 5;
+            const x = paddingLeft + (actualIndex / (data.length - 1)) * graphWidth;
+            const y = paddingTop + graphHeight - (point.value / maxY) * graphHeight;
+            return (
+              <circle 
+                key={actualIndex} 
+                cx={x.toFixed(1)} 
+                cy={y.toFixed(1)} 
+                r="2.5" 
+                className="fill-accent"
+                opacity="0.8"
+              />
+            );
+          })}
         </svg>
       </div>
     </div>
