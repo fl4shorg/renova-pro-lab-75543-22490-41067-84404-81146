@@ -100,7 +100,7 @@ export const EndpointForm = ({ endpoint, onSubmit, onClear, isLoading, hasRespon
           ) : (
             <Play className="w-4 h-4" />
           )}
-          Send Request
+          Enviar
         </button>
         
         <button
