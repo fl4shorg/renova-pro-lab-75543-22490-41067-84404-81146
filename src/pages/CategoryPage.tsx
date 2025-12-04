@@ -146,6 +146,14 @@ const CategoryPage = () => {
                       {endpoint.path}
                     </code>
                   </div>
+                  <span className={cn(
+                    "text-xs px-2.5 py-1 rounded font-mono font-bold shrink-0",
+                    endpoint.method === 'GET' ? "bg-green-500/20 text-green-500" :
+                    endpoint.method === 'POST' ? "bg-blue-500/20 text-blue-500" :
+                    "bg-yellow-500/20 text-yellow-500"
+                  )}>
+                    {endpoint.method}
+                  </span>
                 </button>
 
                 {expandedEndpoints.has(endpoint.id) && (
