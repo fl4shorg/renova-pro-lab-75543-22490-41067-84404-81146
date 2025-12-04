@@ -11,7 +11,6 @@ interface ResponseViewerProps {
 
 export const ResponseViewer = ({ response, method, url, status, contentType }: ResponseViewerProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const [copiedUrl, setCopiedUrl] = useState(false);
   const [copiedCurl, setCopiedCurl] = useState(false);
 
@@ -31,12 +30,6 @@ export const ResponseViewer = ({ response, method, url, status, contentType }: R
       console.error('Failed to copy:', err);
     }
   };
-  
-  const ResponseHeader = () => (
-    <div className="flex items-center gap-2 mb-3">
-      <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{'<>'} Response</span>
-    </div>
-  );
 
   const RequestInfo = ({ method, url, status }: { method?: string; url?: string; status?: number }) => (
     <div className="bg-card border border-border rounded-lg p-4 mb-4">
@@ -95,46 +88,25 @@ export const ResponseViewer = ({ response, method, url, status, contentType }: R
       </div>
     </div>
   );
-
-  const renderMediaContent = (mediaUrl: string, type: 'image' | 'video') => {
-    if (type === 'video') {
-      return (
-        <div className="w-full bg-black rounded-lg overflow-hidden">
+  
+  // Only show media when contentType is explicitly set by the server
+  if (contentType === 'video') {
+    return (
+      <div>
+        <RequestInfo method={method} url={url} status={status} />
+        <div className="w-full bg-black rounded-lg overflow-hidden mb-4">
           <video 
-            src={mediaUrl} 
+            src={response} 
             controls
             autoPlay={false}
             playsInline
             className="w-full h-auto"
-            onLoadedData={() => setVideoLoaded(true)}
             style={{ maxHeight: '400px', display: 'block' }}
             preload="auto"
           >
             Seu navegador não suporta a reprodução de vídeos.
           </video>
         </div>
-      );
-    }
-    return (
-      <div className="w-full bg-black/10 rounded-lg overflow-hidden flex items-center justify-center">
-        <img 
-          src={mediaUrl} 
-          alt="Response media" 
-          className="max-w-full h-auto rounded"
-          onLoad={() => setImageLoaded(true)}
-          style={{ display: 'block', maxHeight: '300px' }}
-        />
-      </div>
-    );
-  };
-  
-  // If contentType is explicitly set (direct media), use it
-  if (contentType === 'video') {
-    return (
-      <div>
-        <ResponseHeader />
-        <RequestInfo method={method} url={url} status={status} />
-        {renderMediaContent(response, 'video')}
         <EndpointUrlSection />
         <CurlCommandSection />
       </div>
@@ -144,80 +116,18 @@ export const ResponseViewer = ({ response, method, url, status, contentType }: R
   if (contentType === 'image') {
     return (
       <div>
-        <ResponseHeader />
         <RequestInfo method={method} url={url} status={status} />
-        {renderMediaContent(response, 'image')}
-        {!imageLoaded && (
-          <div className="text-xs text-center text-muted-foreground mt-2">Carregando imagem...</div>
-        )}
-        <EndpointUrlSection />
-        <CurlCommandSection />
-      </div>
-    );
-  }
-  
-  let parsedResponse;
-  try {
-    parsedResponse = JSON.parse(response);
-  } catch {
-    parsedResponse = null;
-  }
-
-  // Check if response contains media URLs in JSON
-  const findMediaUrl = (obj: any): { url: string; type: 'image' | 'video' } | null => {
-    if (!obj || typeof obj !== 'object') return null;
-    
-    // First check if type is explicitly set
-    if (obj.type === 'video' && obj.url) {
-      return { url: obj.url, type: 'video' };
-    }
-    if (obj.type === 'image' && obj.url) {
-      return { url: obj.url, type: 'image' };
-    }
-    
-    // Check common media URL properties
-    const mediaKeys = ['url', 'image', 'imageUrl', 'img', 'picture', 'photo', 'src', 'link', 'video', 'videoUrl'];
-    for (const key of mediaKeys) {
-      if (obj[key] && typeof obj[key] === 'string') {
-        const value = obj[key];
-        
-        // Check if it's a video URL
-        if (value.match(/\.(mp4|webm|ogg|mov|avi|mkv|flv|wmv|m4v)(\?|$)/i) || 
-            value.startsWith('data:video') ||
-            key.toLowerCase().includes('video')) {
-          return { url: value, type: 'video' };
-        }
-        
-        // Check if it's an image URL
-        if (value.startsWith('http') || value.startsWith('data:image') ||
-            value.match(/\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?|$)/i)) {
-          return { url: value, type: 'image' };
-        }
-      }
-    }
-    
-    // Search recursively
-    for (const key in obj) {
-      const result = findMediaUrl(obj[key]);
-      if (result) return result;
-    }
-    
-    return null;
-  };
-
-  const mediaInfo = parsedResponse ? findMediaUrl(parsedResponse) : null;
-
-  if (mediaInfo) {
-    return (
-      <div>
-        <ResponseHeader />
-        <RequestInfo method={method} url={url} status={status} />
-        {renderMediaContent(mediaInfo.url, mediaInfo.type)}
-        <div className="mt-4 bg-card border border-border rounded-lg p-4">
-          <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">JSON Response</div>
-          <pre className="text-xs font-mono text-foreground whitespace-pre-wrap break-words max-h-40 overflow-auto">
-            {response}
-          </pre>
+        <div className="w-full bg-black/10 rounded-lg overflow-hidden flex items-center justify-center mb-4">
+          <img 
+            src={response} 
+            alt="" 
+            className="max-w-full h-auto rounded"
+            onLoad={() => setImageLoaded(true)}
+            style={{ display: imageLoaded ? 'block' : 'none', maxHeight: '300px' }}
+          />
+          {!imageLoaded && (
+            <div className="p-4 text-sm text-muted-foreground">Carregando imagem...</div>
+          )}
         </div>
         <EndpointUrlSection />
         <CurlCommandSection />
@@ -225,11 +135,12 @@ export const ResponseViewer = ({ response, method, url, status, contentType }: R
     );
   }
 
+  // For JSON/text responses, just show the data
   return (
     <div>
-      <ResponseHeader />
       <RequestInfo method={method} url={url} status={status} />
-      <div className="bg-card border border-border rounded-lg p-4">
+      <div className="bg-card border border-border rounded-lg p-4 mb-4">
+        <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">JSON Response</div>
         <pre className="text-sm font-mono text-foreground whitespace-pre-wrap break-words max-h-60 overflow-auto">
           {response}
         </pre>
